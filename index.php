@@ -1,6 +1,14 @@
 <?php
 #   # (gH)   -_-  index.php  ;  TimeStamp (unix) : 20 Avril 2017 vers 19:49
-require "./Localisation.php";
+include("translate.php");
+
+$lang=htmlspecialchars($_GET["lang"]);
+if (!isset($_GET["lang"])) {
+  $lang="FR";
+}
+
+setcookie(lang_Cookie, $lang);
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -10,7 +18,7 @@ require "./Localisation.php";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>G&eacute;n&eacute;rateur de donn&eacute;es</title>
+    <title><?php echo trad("01",$lang) ?></title>
     <link href="Style/css/bootstrap.css" rel="stylesheet" type = "text/css"/>
     <link href="Style/css/style.css" rel="stylesheet" type = "text/css"/>
     <script src="Scripts/aide.js" type="text/javascript"></script>
@@ -19,6 +27,7 @@ require "./Localisation.php";
     <script src="Scripts/validation.js" type="text/javascript"></script>
     <script src="Scripts/recuperation.js" type="text/javascript"></script>
     <script src="Scripts/jQuery.js" type="text/javascript"></script>
+    <script src="Scripts/Lang.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,29 +43,18 @@ require "./Localisation.php";
         <ul>
           <li>
             <a>
-              <img src="./Style/image/Flags/fr.png" title="Français"/>
-            </a>
+              <img src="./Style/image/Flags/fr.png" title="Français" onclick="Change_lang(1)" />
             <ul class="sub_lang">
               <li>
                 <a>
-                  <img src="./Style/image/Flags/en.png" title="Anglais"/>
+                <img src="./Style/image/Flags/en.png" title="Anglais" onclick="Change_lang(2)" />
                 </a>
               </li>
-              <li>
-                <a>
-                  <img src="./Style/image/Flags/es.png" title="Espagnol"/>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <img src="./Style/image/Flags/de.png" title="Allemand"/>
-                </a>
-              </li>	
             </ul>
           </li>
         </ul>
       </div>
-      <span onclick="aide(1)" id="BoutonAide" class="btn btn-lg btn-info" style="z-index: 9999">Afficher l'Aide</span>
+      <span onclick="aide(1)" id="BoutonAide" class="btn btn-lg btn-info" style="z-index: 9999"><?php echo trad("41",$lang); ?></span>
     </div>
 
     <div class="jumbotron">
@@ -66,7 +64,7 @@ require "./Localisation.php";
             <img alt="icone du g&eacute;n&eacute;rateur" src="logo-site.png" height="100" width="100"/>
           </div>
           <div class ="col-xs-10 col-sn-10 col-md-10 col-lg-10"><!--le titre prend 10 colonnes -->
-            <h1><span class="titreUDG"> <?php echo _("G&eacute;n&eacute;rateur "); ?> <span class="ghRouge"><b> <?php echo _("Universel"); ?> </b> </span> <?php echo _("de Donn&eacute;es"); ?></span></h1>
+            <h1><span class="titreUDG"> <?php echo trad("02",$lang); ?> <span class="ghRouge"><b> <?php echo trad("03",$lang); ?> </b> </span> <?php echo trad("04",$lang); ?></span></h1>
           </div>
         </div>
       </div>
@@ -84,19 +82,18 @@ require "./Localisation.php";
       <div class="row">
         <div class="col-xs-13 col-sn-13 col-md-13 col-lg-13">
           <div class="titleprghp">
-            <span class="prg"> <?php echo _("Formulaire de g&eacute;n&eacute;ration&nbsp;:&nbsp;"); ?> </span>
-            <button onclick="RAZ();" id="RAZ" class="btn btn-default"> <?php echo ("Remettre &agrave; z&eacute;ro"); ?> </button>
+            <span class="prg"> <?php echo trad("05",$lang); ?> </span>
+            <button onclick="RAZ();" id="RAZ" class="btn btn-default"> <?php echo trad("06",$lang); ?> </button>
           </div>
         </div>
       </div>
-
       <form id="formulaire" method="post" onsubmit="return validationEnvoi();" action = "Generateur/TraitementsForm.php">
         <!-- Nom de la feuille de donnees -->
         <div class="row">
           <div class="col-xs-12 col-sn-12 col-md-12 col-lg-12">
             <div class="form-horizontal">
               <div class="form-group">
-                <label class ="col-xs-2 col-sn-2 col-md-2 col-lg-2" for = "NomFeuilleDeDonnees"> <?php echo _("Nom du projet :"); ?> </label>
+                <label class ="col-xs-2 col-sn-2 col-md-2 col-lg-2" for = "NomFeuilleDeDonnees"> <?php echo trad("07",$lang); ?> </label>
                 <div class = "col-xs-5 col-sn-5 col-md-5 col-lg-5">
                   <input type="text" class="form-control required" name="NomProjet" onchange="ValidationInputProjet('NomFeuilleDeDonnees');" id = "NomFeuilleDeDonnees" value =""/>
                 </div>
@@ -111,19 +108,19 @@ require "./Localisation.php";
               <div class="col-xs-12 col-sn-12 col-md-12 col-lg-12">
                 <div class="form-horizontal">
                   <div class="form-group DGT">
-                    <label class ="col-xs-2 col-sn-2 col-md-2 col-lg-2" for = "NomTable0"><?php echo _("Nom de la Table&nbsp;:&nbsp;"); ?> </label>
+                    <label class ="col-xs-2 col-sn-2 col-md-2 col-lg-2" for = "NomTable0"><?php echo trad("08",$lang); ?> </label>
                     <div class = "col-xs-2 col-sn-2 col-md-2 col-lg-2">
                       <input type="text" class="form-control required input-change" id = "NomTable0" onchange="ValidationInputParametreTable(0,'NomTable');" name ="NomTable0" value =""/>
                     </div>
-                    <label  class ="col-xs-2 col-sn-2 col-md-2 col-lg-2" for = "NombreDeLigne0"> <?php echo _("Nombre de lignes&nbsp;:"); ?></label>
+                    <label  class ="col-xs-2 col-sn-2 col-md-2 col-lg-2" for = "NombreDeLigne0"> <?php echo trad("09",$lang); ?></label>
                     <div class = "col-xs-2 col-sn-2 col-md-2 col-lg-2">
                         <input type="text" class="form-control required input-change" id ="NombreDeLigne0" onchange="ValidationInputParametreTable(0,'NombreDeLigne');" name="NombreDeLigne0" value =""/>
                     </div>
-                    <label class ="col-xs-2 col-sn-2 col-md-2 col-lg-2"  for = "GRAINE0"> <?php echo _(" Graine de g&eacute;n&eacute;ration&nbsp;:&nbsp;"); ?></label>
+                    <label class ="col-xs-2 col-sn-2 col-md-2 col-lg-2"  for = "GRAINE0"> <?php echo trad("10",$lang); ?></label>
                     <div class = "col-xs-2 col-sn-2 col-md-2 col-lg-2">
                       <input type="text" class="form-control input-change" id ="GRAINE0" onchange="ValidationInputParametreTable(0,'GRAINE');" name="GRAINE0" value =""/>
                     </div>
-                    <label class ="col-xs-2 col-sn-2 col-md-2 col-lg-2 FormatDeSortie"> <?php echo _("Formats de sortie&nbsp;:&nbsp;"); ?> </label>
+                    <label class ="col-xs-2 col-sn-2 col-md-2 col-lg-2 FormatDeSortie"> <?php echo trad("11",$lang); ?> </label>
                     <label class="formatSortie checkbox-inline label-checkbox" for="CSV0">CSV&nbsp;</label><input class="formatSortie0 pos-checkbox" type="checkbox" name="CSV0" id="CSV0" value="CSV0" onclick="deRequire('formatSortie0')" required/>
                     <label class="checkbox-inline formatSortie label-checkbox" for="SQL0">SQL&nbsp;</label><input class="formatSortie0" type="checkbox" name="SQL0" id="SQL0" value="SQL0" onclick="deRequire('formatSortie0')" required/>
                     <label class="checkbox-inline formatSortie label-checkbox" for="XML0">XML&nbsp;</label><input class="formatSortie0" type="checkbox" name="XML0" id="XML0" value="XML0" onclick="deRequire('formatSortie0')" required/>
@@ -134,52 +131,52 @@ require "./Localisation.php";
             </div>
             <div id ="tab0Lignes" class="row col-xs-12 col-sn-12 col-md-12 col-lg-12 form-inline form-group">
               <div class="row col-xs-12 col-sn-12 col-md-12 col-lg-12 form-inline form-group">
-                <label class ="col-xs-2 col-sn-2 col-md-2 col-lg-2">Nom&nbsp;</label>
-                <label  class ="col-xs-3 col-sn-3 col-md-3 col-lg-3">&nbsp; &nbsp; Type de Donn&eacute;es</label>
-                <label class ="col-xs-3 col-sn-3 col-md-3 col-lg-3">Mode de G&eacute;n&eacute;ration</label>
+                <label class ="col-xs-2 col-sn-2 col-md-2 col-lg-2"><?php echo trad("12",$lang); ?></label>
+                <label  class ="col-xs-3 col-sn-3 col-md-3 col-lg-3"><?php echo trad("13",$lang); ?></label>
+                <label class ="col-xs-3 col-sn-3 col-md-3 col-lg-3"><?php echo trad("14",$lang); ?></label>
               </div>
               <div id="tab0Ligne0" class="row col-xs-12 col-sn-12 col-md-12 col-lg-12 form-inline form-group">
                 <input type="text" class="form-control required col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement" name="tab0label0" id="tab0label0" onchange="nomLigne(0,0,'label')"  value=""/>
                 <select class="form-control col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement" id="tab0TypeDeDonnees0" name="tab0TypeDeDonnees0" onchange="GestionOptionTDD(0,0)" required>
-                  <option class="Defaultab" selected="selected" value="">Choisissez un type de donn&eacute;es</option>
+                  <option class="Defaultab" selected="selected" value=""><?php echo trad("16",$lang); ?></option>
                   <option value = "id" >ID</option>
                   <option value = "IDS" >IDS</option>
-                  <option value = "Numerique">Numerique</option>
-                  <option value = "Dictionnaire" >Dictionnaire</option>
+                  <option value = "Numerique"><?php echo trad("18",$lang); ?></option>
+                  <option value = "Dictionnaire" ><?php echo trad("17",$lang); ?></option>
                   <option value = "DateHeure" >DateHeure</option>
                   <option value = "CodeArticle" >CodeArticle</option>
-                  <option value = "Reference">Reference</option>
-                  <option value = "Formule">Formule</option>           
+                  <option value = "Reference"><?php echo trad("20",$lang); ?></option>
+                  <option value = "Formule"><?php echo trad("19",$lang); ?></option>           
                 </select>
                 <select class="form-control col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement" id="tab0ModeDeGeneration0" disabled ="disabled"  name="tab0ModeDeGeneration0" onchange="GestionOptionMDG(0,0)">
-                  <option class = "Defaultab" selected="selected" >Choisissez un mode</option>
-                  <option value = "Aleatoire">Al&eacute;atoire (uniforme)</option>
-                  <option value = "Codage">Loi Normale</option>
-                  <option value = "LoiNormale">Loi Normale</option>
-                  <option value = "Sequentielle">S&eacute;quentielle</option>
+                  <option class = "Defaultab" selected="selected" ><?php echo trad("21",$lang); ?></option>
+                  <option value = "Aleatoire"><?php echo trad("22",$lang); ?></option>
+                  <option value = "Codage"><?php echo trad("23",$lang); ?></option>
+                  <option value = "LoiNormale"><?php echo trad("24",$lang); ?></option>
+                  <option value = "Sequentielle"><?php echo trad("25",$lang); ?></option>
                 </select>
-                <div id="tab0MinParent0" class="form-group col-auto"></div><div id="tab0MaxParent0" class="form-group col-auto"></div><div id="tab0PasSeqParent0" class="form-group col-auto"></div><div id="tab0DicoParent0" class="form-group col-auto"></div><div id="tab0FormuleParent0" class="form-group col-auto"></div><div id="tab0CodageParent0" class="form-group col-auto"></div><div id="tab0ReferenceParent0" class="form-group col-auto"></div><div id="tab0PrefixeParent0" class="form-group col-auto"></div><div id="tab0SuffixeParent0" class="form-group col-auto"></div><div id="tab0UniteParent0" class="form-group col-auto"></div><div id="tab0DateHeureMinParent0" class="form-group col-auto"></div><div id="tab0DateHeureMaxParent0" class="form-group col-auto"></div><div id="tab0MasqueParent0" class="form-group col-auto"></div><div id="tab0NbChiffresParent0" class="form-group col-auto"></div><div id="tab0LesNullParent0" class="form-group col-auto"></div><button type="button" id="tab0BoutonSuppression0" class="form-group form-control col-auto croix" onclick="DelRow(0,0)"><img class = "image_croix" title= "Supprime la ligne" src="./Style/image/croix.png"/></button>
+                <div id="tab0MinParent0" class="form-group col-auto"></div><div id="tab0MaxParent0" class="form-group col-auto"></div><div id="tab0PasSeqParent0" class="form-group col-auto"></div><div id="tab0DicoParent0" class="form-group col-auto"></div><div id="tab0FormuleParent0" class="form-group col-auto"></div><div id="tab0CodageParent0" class="form-group col-auto"></div><div id="tab0ReferenceParent0" class="form-group col-auto"></div><div id="tab0PrefixeParent0" class="form-group col-auto"></div><div id="tab0SuffixeParent0" class="form-group col-auto"></div><div id="tab0UniteParent0" class="form-group col-auto"></div><div id="tab0DateHeureMinParent0" class="form-group col-auto"></div><div id="tab0DateHeureMaxParent0" class="form-group col-auto"></div><div id="tab0MasqueParent0" class="form-group col-auto"></div><div id="tab0NbChiffresParent0" class="form-group col-auto"></div><div id="tab0LesNullParent0" class="form-group col-auto"></div><button type="button" id="tab0BoutonSuppression0" class="form-group form-control col-auto croix" onclick="DelRow(0,0)"><img class = "image_croix" title= "<?php echo trad("37",$lang); ?>" src="./Style/image/croix.png"/></button>
               </div>
             </div>
-            <div class = "row col-xs-1 col-sn-1 col-md-1 col-lg-1"><button type="button" class="plus1" onclick="addRow(0);"> <img class = "images" title= "Ajoute une colonne" src="./Style/image/plus.png"/></button></div>
+            <div class = "row col-xs-1 col-sn-1 col-md-1 col-lg-1"><button type="button" class="plus1" onclick="addRow(0);"> <img class = "images" title= "<?php echo trad("38",$lang); ?>" src="./Style/image/plus.png"/></button></div>
           </div>
         </div>
         <div id="boutons_table" class = "row col-xs-2 col-sn-2 col-md-2 col-lg-2">
-          <button type="button" id="plus2" onclick="addTable();"> <img class = "images" title= "Ajoute une table" src="./Style/image/plus.png"/></button>
-          <button type="button" id="moins" onclick="delTable();"> <img class = "images" title= "Supprime une table" src="./Style/image/moins.png"/></button>
+          <button type="button" id="plus2" onclick="addTable();"> <img class = "images" title= "<?php echo trad("39",$lang); ?>" src="./Style/image/plus.png"/></button>
+          <button type="button" id="moins" onclick="delTable();"> <img class = "images" title= "<?php echo trad("40",$lang); ?>" src="./Style/image/moins.png"/></button>
         </div>
         <div id = "FormatSortie" class = "row col-xs-12 col-sn-12 col-md-12 col-lg-12">
           <div class="panel panel-primary " >
             <div class = "panel-heading">
-              <h3 class="panel-title">Entr&eacute;es/Sorties :</h3>
+              <h3 class="panel-title"><?php echo trad("26",$lang); ?></h3>
             </div>
             <div class = "panel-body" id="chargementDeFichier">
-              <button type="button" class = "btn btn-lg btn-default white blue" id="btnOpen"><b>Importer un fichier XML ou SQL</b></button>
+              <button type="button" class = "btn btn-lg btn-default white blue" id="btnOpen"><b><?php echo trad("27",$lang); ?></b></button>
               <input type="file" id="AcceptInput" accept=".sql,.xml,.txt"/>
-              <a href="Fichiers/Parametre.xml" class = "btn btn-lg btn-default white blue" id="btnOpen2"><b>exemple de fichier XML</b></a>
-              <a href="Fichiers/titanic_mysql_cr.txt" class = "btn btn-lg btn-default white blue" id="btnOpen3"><b>exemple de fichier SQL</b></a>
+              <a href="Fichiers/Parametre.xml" class = "btn btn-lg btn-default white blue" id="btnOpen2"><b><?php echo trad("28",$lang); ?></b></a>
+              <a href="Fichiers/titanic_mysql_cr.txt" class = "btn btn-lg btn-default white blue" id="btnOpen3"><b><?php echo trad("29",$lang); ?></b></a>
               <button type="submit" id="BoutonPrevi" class="btn btn-lg btn-default white bleu_pastel">Pr&eacute;visualiser</button>
-              <button type="submit" id="BoutonEnvois" class="btn btn-lg btn-default white bleu_pastel">G&eacute;n&eacute;rer</button>
+              <button type="submit" id="BoutonEnvois" class="btn btn-lg btn-default white bleu_pastel"><?php echo trad("30",$lang); ?></button>
             </div>
           </div>
         </div>
@@ -190,14 +187,14 @@ require "./Localisation.php";
       <div id = "Exemples" class = "col-xs-12 col-sn-12 col-md-12 col-lg-12">
         <div class="panel panel-primary " >
           <div class = "panel-heading">
-            <h3 class="panel-title">Exemples :</h3>
+            <h3 class="panel-title"><?php echo trad("31",$lang); ?></h3>
           </div>
           <div class = "panel-body">
-            <button type="submit" id="ChampsSimpleBtn"   class="btn btn-lg btn-default white blue"        onclick="ChampSimple();">Champ simple</button>
-            <button type="submit" id="ChampsFormuleBtn"  class="btn btn-lg btn-default btn-ex white blue" onclick="ChampFormule();">Formule</button>
-            <button type="submit" id="ChampsMultiTabBtn" class="btn btn-lg btn-default btn-ex white blue" onclick="ChampMultiTables();">Champs Muti Tables</button>
-            <button type="submit" id="CodageBtn"         class="btn btn-lg btn-default btn-ex white blue" onclick="Codage();">Codage</button>
-            <button type="submit" id="ChampsCoherentBtn" class="btn btn-lg btn-default btn-ex white blue" onclick="DonneeCoherente();">Champs Coh&eacute;rents</button>
+            <button type="submit" id="ChampsSimpleBtn"   class="btn btn-lg btn-default white blue"        onclick="ChampSimple();"><?php echo trad("32",$lang); ?></button>
+            <button type="submit" id="ChampsFormuleBtn"  class="btn btn-lg btn-default btn-ex white blue" onclick="ChampFormule();"><?php echo trad("34",$lang); ?></button>
+            <button type="submit" id="ChampsMultiTabBtn" class="btn btn-lg btn-default btn-ex white blue" onclick="ChampMultiTables();"><?php echo trad("33",$lang); ?></button>
+            <button type="submit" id="CodageBtn"         class="btn btn-lg btn-default btn-ex white blue" onclick="Codage();"><?php echo trad("35",$lang); ?></button>
+            <button type="submit" id="ChampsCoherentBtn" class="btn btn-lg btn-default btn-ex white blue" onclick="DonneeCoherente();"><?php echo trad("36",$lang); ?></button>
             <button type="submit" id="ChampsDateHeureBtn" class="btn btn-lg btn-default btn-ex white blue" onclick="DateHeure();">Date Heure</button>
           </div>
         </div>
