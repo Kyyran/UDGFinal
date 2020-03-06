@@ -232,7 +232,7 @@ try{
 
 # 5. on "envoie" le zip via header()
 
-$dbg = 0  ; # 0 en normal, 1 pour debug
+$dbg = 1  ; # 0 en normal, 1 pour debug
 
 if ($dbg==0) {
 
