@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Generateur>
+    <Table>
+        <Champs>
+            <Donnee NomColonne="Prenom" Type="Dictionnaire" NomDictionnaire="Prenoms" ModeGeneration="uniforme" EnMajuscules="oui"/>
+            <Donnee NomColonne="Noms" Type="Dictionnaire" NomDictionnaire="noms" ModeGeneration="uniforme"/>
+            <Donnee NomColonne="Age" Type="Numerique" ModeGeneration="uniforme" Null="1%" Min="18" Max="80" Unite="ans"/>
+        </Champs>
+        <Parametres>
+            <NomTable nom="Tableexemple0"/>
+            <Sortie CSV="oui" XML="oui" SQL="oui" JSON="oui"/>
+            <NbLigne valeur="1000"/>
+            <Graine valeur="0413221995"/>
+        </Parametres>
+    </Table>
+</Generateur>
