@@ -517,10 +517,10 @@ function addRow(NumTab){//ajoute une ligne
 
     var InputNom=document.createElement('input');
     InputNom.setAttribute('type',"text");
-    InputNom.setAttribute('class',"form-control required col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement");
-    InputNom.setAttribute('name',"tab"+NumTab+"label"+TabIndex[VarNumTab]);  //Problème affichage 
+    InputNom.setAttribute('class',"form-control col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement");
+    InputNom.setAttribute('name',"tab"+NumTab+"Label"+TabIndex[VarNumTab]);
     InputNom.setAttribute('onchange',"nomLigne("+VarNumTab+","+TabIndex[VarNumTab]+",\"Label\" );");
-    InputNom.setAttribute('id',"tab"+NumTab+"label"+TabIndex[VarNumTab]);
+    InputNom.setAttribute('id',"tab"+NumTab+"Label"+TabIndex[VarNumTab]);
     InputNom.innerHTML = " ";
 
     var SelectTDD=document.createElement('select');
@@ -980,10 +980,10 @@ function addTable(){//ajout d'une table
 
     var InputNom = document.createElement('input');
     InputNom.setAttribute('type',"text");
-    InputNom.setAttribute('class',"form-control required col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement");
-    InputNom.setAttribute('name',"tab"+VarNumTab+"label"+TabIndex[VarNumTab]);
-    InputNom.setAttribute('onchange',"nomLigne("+VarNumTab+","+TabIndex[VarNumTab]+",\"Label\" );");//Problème affichage 
-    InputNom.setAttribute('id',"tab"+VarNumTab+"label"+TabIndex[VarNumTab]);
+    InputNom.setAttribute('class',"form-control col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement");
+    InputNom.setAttribute('name',"tab"+VarNumTab+"Label"+TabIndex[VarNumTab]);
+    InputNom.setAttribute('onchange',"nomLigne("+VarNumTab+","+TabIndex[VarNumTab]+",\"Label\" );");
+    InputNom.setAttribute('id',"tab"+VarNumTab+"Label"+TabIndex[VarNumTab]);
     InputNom.innerHTML = " ";
 
 
@@ -1706,9 +1706,9 @@ function EchangeLigne(NumTab,NumLigne,NouveauNumTab,NouveauNumLigne){ //Fonction
   if(document.getElementById('tab'+NumTab+'Ligne'+NumLigne))
   {
     //LABEL
-    document.getElementById('tab'+NumTab+'label'+NumLigne).name = 'tab'+NouveauNumTab+'label'+NouveauNumLigne;
-    document.getElementById('tab'+NumTab+'label'+NumLigne).attributes.onchange.nodeValue = "nomLigne("+NouveauNumTab+","+NouveauNumLigne+",'label');";
-    document.getElementById('tab'+NumTab+'label'+NumLigne).id = 'tab'+NouveauNumTab+'label'+NouveauNumLigne;
+    document.getElementById('tab'+NumTab+'Label'+NumLigne).name = 'tab'+NouveauNumTab+'Label'+NouveauNumLigne;
+    document.getElementById('tab'+NumTab+'Label'+NumLigne).attributes.onchange.nodeValue = "nomLigne("+NouveauNumTab+","+NouveauNumLigne+",'Label');";
+    document.getElementById('tab'+NumTab+'Label'+NumLigne).id = 'tab'+NouveauNumTab+'Label'+NouveauNumLigne;
 
     //TYPE DE DONNES
     document.getElementById('tab'+NumTab+'TypeDeDonnees'+NumLigne).name = 'tab'+NouveauNumTab+'TypeDeDonnees'+NouveauNumLigne;

@@ -22,7 +22,7 @@ function ChampSimple(){ //EXEMPLE D'UNE TABLE SIMPLE
 
     //LIGNE 0
 
-    document.getElementById("tab"+table+"label"+ligne).value = "IDPersonne";
+    document.getElementById("tab"+table+"Label"+ligne).value = "IDPersonne";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "IDS";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Prefixe"+ligne).value = "PERS-";
@@ -34,7 +34,7 @@ function ChampSimple(){ //EXEMPLE D'UNE TABLE SIMPLE
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="Prenom";
+    document.getElementById("tab"+table+"Label"+ligne).value ="Prenom";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "Prenoms";
@@ -45,7 +45,7 @@ function ChampSimple(){ //EXEMPLE D'UNE TABLE SIMPLE
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="Noms";
+    document.getElementById("tab"+table+"Label"+ligne).value ="Noms";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "noms";
@@ -56,7 +56,7 @@ function ChampSimple(){ //EXEMPLE D'UNE TABLE SIMPLE
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="Age";
+    document.getElementById("tab"+table+"Label"+ligne).value ="Age";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Numerique";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Min"+ligne).value = "18";
@@ -83,7 +83,7 @@ function ChampMultiTables(){ //EXEMPLE DE MULTIPLES TABLES
 
     //LIGNE 0
 
-    document.getElementById("tab"+table+"label"+ligne).value ="idArticle";
+    document.getElementById("tab"+table+"Label"+ligne).value ="idArticle";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "id";
     GestionOptionTDD(table,ligne);
 
@@ -93,7 +93,7 @@ function ChampMultiTables(){ //EXEMPLE DE MULTIPLES TABLES
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="refArticle";
+    document.getElementById("tab"+table+"Label"+ligne).value ="refArticle";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "CodeArticle";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Masque"+ligne).value = "XXXyy-991";
@@ -113,7 +113,7 @@ function ChampMultiTables(){ //EXEMPLE DE MULTIPLES TABLES
 
     //LIGNE 0
 
-    document.getElementById("tab"+table+"label"+ligne).value ="idVendeur";
+    document.getElementById("tab"+table+"Label"+ligne).value ="idVendeur";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "id";
     GestionOptionTDD(table,ligne);
 
@@ -121,7 +121,7 @@ function ChampMultiTables(){ //EXEMPLE DE MULTIPLES TABLES
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="prenomVendeur";
+    document.getElementById("tab"+table+"Label"+ligne).value ="prenomVendeur";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "Prenoms";
@@ -132,7 +132,7 @@ function ChampMultiTables(){ //EXEMPLE DE MULTIPLES TABLES
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="refVendeur";
+    document.getElementById("tab"+table+"Label"+ligne).value ="refVendeur";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Numerique";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Min"+ligne).value = "1";
@@ -153,7 +153,7 @@ function ChampMultiTables(){ //EXEMPLE DE MULTIPLES TABLES
 
     //LIGNE 0
 
-    document.getElementById("tab"+table+"label"+ligne).value ="idVentes";
+    document.getElementById("tab"+table+"Label"+ligne).value ="idVentes";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "id";
     GestionOptionTDD(table,ligne);
 
@@ -161,7 +161,7 @@ function ChampMultiTables(){ //EXEMPLE DE MULTIPLES TABLES
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="codeArticle";
+    document.getElementById("tab"+table+"Label"+ligne).value ="codeArticle";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Reference";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"TableReference"+ligne).value = "Articles";
@@ -171,7 +171,7 @@ function ChampMultiTables(){ //EXEMPLE DE MULTIPLES TABLES
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="mois";
+    document.getElementById("tab"+table+"Label"+ligne).value ="mois";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Numerique";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Min"+ligne).value = "1";
@@ -181,7 +181,7 @@ function ChampMultiTables(){ //EXEMPLE DE MULTIPLES TABLES
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="annee";
+    document.getElementById("tab"+table+"Label"+ligne).value ="annee";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Numerique";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Min"+ligne).value = "2010";
@@ -191,7 +191,7 @@ function ChampMultiTables(){ //EXEMPLE DE MULTIPLES TABLES
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="codeVendeur";
+    document.getElementById("tab"+table+"Label"+ligne).value ="codeVendeur";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Reference";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"TableReference"+ligne).value = "Vendeurs";
@@ -217,7 +217,7 @@ function ChampFormule(){ //EXEMPLE DE FORMULE
 
     //LIGNE 0
 
-    document.getElementById("tab"+table+"label"+ligne).value ="idTemp";
+    document.getElementById("tab"+table+"Label"+ligne).value ="idTemp";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "id";
     GestionOptionTDD(table,ligne);    
 
@@ -225,7 +225,7 @@ function ChampFormule(){ //EXEMPLE DE FORMULE
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="Celsius";
+    document.getElementById("tab"+table+"Label"+ligne).value ="Celsius";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Numerique";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Min"+ligne).value = "0";
@@ -235,7 +235,7 @@ function ChampFormule(){ //EXEMPLE DE FORMULE
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="Temperatures en Fahrenheit";
+    document.getElementById("tab"+table+"Label"+ligne).value ="Temperatures en Fahrenheit";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Formule";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Formule"+ligne).value = "Celsius * 1.8 + 32";
@@ -259,7 +259,7 @@ function Codage() { //EXEMPLE DE CODAGE
 
     //LIGNE 0
 
-    document.getElementById("tab"+table+"label"+ligne).value ="Prenom";
+    document.getElementById("tab"+table+"Label"+ligne).value ="Prenom";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "Prenoms";
@@ -270,7 +270,7 @@ function Codage() { //EXEMPLE DE CODAGE
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="Noms";
+    document.getElementById("tab"+table+"Label"+ligne).value ="Noms";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "noms";
@@ -281,14 +281,14 @@ function Codage() { //EXEMPLE DE CODAGE
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="Main";
+    document.getElementById("tab"+table+"Label"+ligne).value ="Main";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Numerique";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"ModeDeGeneration"+ligne).value = "Codage";
     GestionOptionMDG(table,ligne);
     document.getElementById("tab"+table+"Min"+ligne).value = "1";
     document.getElementById("tab"+table+"Max"+ligne).value = "2";
-    document.getElementById("tab"+table+"CodageForm"+ligne).value = "1;Droitier;2;Gaucher";
+    document.getElementById("tab"+table+"Codage"+ligne).value = "1;Droitier;2;Gaucher";
 }
 function DonneeCoherente() { //EXEMPLE DE DONNEE COHERENTE
 
@@ -309,7 +309,7 @@ function DonneeCoherente() { //EXEMPLE DE DONNEE COHERENTE
 
     //LIGNE 0
 
-    document.getElementById("tab"+table+"label"+ligne).value ="Prenom";
+    document.getElementById("tab"+table+"Label"+ligne).value ="Prenom";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "Prenoms";
@@ -322,7 +322,7 @@ function DonneeCoherente() { //EXEMPLE DE DONNEE COHERENTE
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="Noms";
+    document.getElementById("tab"+table+"Label"+ligne).value ="Noms";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "noms";
@@ -333,7 +333,7 @@ function DonneeCoherente() { //EXEMPLE DE DONNEE COHERENTE
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="Ville actuelle";
+    document.getElementById("tab"+table+"Label"+ligne).value ="Ville actuelle";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "villes";
@@ -379,7 +379,7 @@ function DateHeure(){
     document.getElementById("tab0ModeDeGeneration0").setAttribute("disabled","disabled");
     */
 
-    document.getElementById("tab"+table+"label"+ligne).value = "NomTrain";
+    document.getElementById("tab"+table+"Label"+ligne).value = "NomTrain";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "IDS";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Prefixe"+ligne).value = "SNCF-";
@@ -391,7 +391,7 @@ function DateHeure(){
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="VilleDepart";
+    document.getElementById("tab"+table+"Label"+ligne).value ="VilleDepart";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "capitales_europeennes";
@@ -402,7 +402,7 @@ function DateHeure(){
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="horaireDepart";
+    document.getElementById("tab"+table+"Label"+ligne).value ="horaireDepart";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "DateHeure";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"DateHeureMin"+ligne).value = "2019-11-06T10:00:00";
@@ -412,7 +412,7 @@ function DateHeure(){
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="VilleArrivee";
+    document.getElementById("tab"+table+"Label"+ligne).value ="VilleArrivee";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "capitales_europeennes";
@@ -423,7 +423,7 @@ function DateHeure(){
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"label"+ligne).value ="horaireArrivee";
+    document.getElementById("tab"+table+"Label"+ligne).value ="horaireArrivee";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "DateHeure";
     GestionOptionTDD(table,ligne);
     document.getElementById("tab"+table+"DateHeureMin"+ligne).value = "2019-11-06T16:00:00";

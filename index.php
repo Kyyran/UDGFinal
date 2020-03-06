@@ -110,7 +110,7 @@ setcookie(lang_Cookie, $lang);
                   <div class="form-group DGT">
                     <label class ="col-xs-2 col-sn-2 col-md-2 col-lg-2" for = "NomTable0"><?php echo trad("08",$lang); ?> </label>
                     <div class = "col-xs-2 col-sn-2 col-md-2 col-lg-2">
-                      <input type="text" class="form-control required input-change" id = "NomTable0" onchange="ValidationInputParametreTable(0,'NomTable');" name ="NomTable0" value =""/>
+                      <input type="text" class="form-control required input-change" id = "NomTable0" onchange="ValidationInputParametreTable(0,'NomTable');validationNomTable(0);" name ="NomTable0" value =""/>
                     </div>
                     <label  class ="col-xs-2 col-sn-2 col-md-2 col-lg-2" for = "NombreDeLigne0"> <?php echo trad("09",$lang); ?></label>
                     <div class = "col-xs-2 col-sn-2 col-md-2 col-lg-2">
@@ -136,7 +136,7 @@ setcookie(lang_Cookie, $lang);
                 <label class ="col-xs-3 col-sn-3 col-md-3 col-lg-3"><?php echo trad("14",$lang); ?></label>
               </div>
               <div id="tab0Ligne0" class="row col-xs-12 col-sn-12 col-md-12 col-lg-12 form-inline form-group">
-                <input type="text" class="form-control required col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement" name="tab0label0" id="tab0label0" onchange="nomLigne(0,0,'label')"  value=""/>
+                <input type="text" class="form-control col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement" name="tab0Label0" id="tab0Label0" onchange="nomLigne(0,0,'Label')"  value=""/>
                 <select class="form-control col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement" id="tab0TypeDeDonnees0" name="tab0TypeDeDonnees0" onchange="GestionOptionTDD(0,0)" required>
                   <option class="Defaultab" selected="selected" value=""><?php echo trad("16",$lang); ?></option>
                   <option value = "id" >ID</option>
@@ -174,7 +174,6 @@ setcookie(lang_Cookie, $lang);
               <button type="button" class = "btn btn-lg btn-default white blue" id="btnOpen"><b><?php echo trad("27",$lang); ?></b></button>
               <input type="file" id="AcceptInput" accept=".sql,.xml,.txt"/>
               <a href="Fichiers/Parametre.xml" class = "btn btn-lg btn-default white blue" id="btnOpen2"><b><?php echo trad("28",$lang); ?></b></a>
-              <a href="Fichiers/titanic_mysql_cr.txt" class = "btn btn-lg btn-default white blue" id="btnOpen3"><b><?php echo trad("29",$lang); ?></b></a>
               <button type="submit" id="BoutonPrevi" class="btn btn-lg btn-default white bleu_pastel">Pr&eacute;visualiser</button>
               <button type="submit" id="BoutonEnvois" class="btn btn-lg btn-default white bleu_pastel"><?php echo trad("30",$lang); ?></button>
             </div>

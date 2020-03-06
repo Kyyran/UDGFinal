@@ -69,7 +69,7 @@ foreach ($_POST as $key => $val) {
         $xml->appendChild($gen);
     }
 
-    if (strstr($key, "label")) {
+    if (strstr($key, "Label")) {
         $champ = $xml->getElementsByTagName('Champs')->item($numeroTab[0]);
         $donnee = $xml->createElement("Donnee");
         $donnee->setAttribute("NomColonne", $val);
@@ -232,7 +232,7 @@ try{
 
 # 5. on "envoie" le zip via header()
 
-$dbg = 1  ; # 0 en normal, 1 pour debug
+$dbg = 0  ; # 0 en normal, 1 pour debug
 
 if ($dbg==0) {
 

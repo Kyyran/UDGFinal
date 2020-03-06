@@ -82,13 +82,21 @@ function nomLigne(NumTab,NumLigne,nomid){
 
     if(!(reg.test(inputVal))) {
         document.getElementById(id).removeAttribute("class");
-        document.getElementById(id).setAttribute("class","form-control inputInvalid");
+        if(nomid=="Label"){ //Resolution de bug sur le premier champ
+            document.getElementById(id).setAttribute("class","form-control inputInvalid col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement");
+        }else{
+            document.getElementById(id).setAttribute("class","form-control inputInvalid");
+        }
         document.getElementById(id).setAttribute("title","N'utilisez que des caractères alphanumériques (a-z) ou (0-9) sans commencer par un espace");
         LockGenerer();
     }else{
         document.getElementById(id).removeAttribute("class");
         document.getElementById(id).removeAttribute("title");
-        document.getElementById(id).setAttribute("class","form-control");
+        if(nomid=="Label"){ //Resolution de bug sur le premier champ
+            document.getElementById(id).setAttribute("class","form-control col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement");
+        }else{
+            document.getElementById(id).setAttribute("class","form-control");
+        }
         document.getElementById("BoutonEnvois").removeAttribute("title");
         UnLockGenerer();
     }
@@ -327,7 +335,7 @@ function LabelLigneExist(numTab, inputVal){
     {
         if(document.getElementById("tab"+numTab+"TypeDeDonnees"+i).value == "Numerique")
         {
-            tableauNomColonneNumerique.push(document.getElementById("tab"+numTab+"label"+i).value);
+            tableauNomColonneNumerique.push(document.getElementById("tab"+numTab+"Label"+i).value);
         }
     }
 
@@ -474,7 +482,7 @@ function ValidationColonneReference(NumTabl,Numligne){
 
         for(var i = 0; i < TabIndex[tableReference] + 1 && !colonneFound; i++){
 
-            var nomColonne = document.getElementById("tab"+tableReference+"label"+i).value;
+            var nomColonne = document.getElementById("tab"+tableReference+"Label"+i).value;
             if(valeurColonneReference == nomColonne && valeurColonneReference != ""){
                 colonneFound = true;
             }
@@ -517,6 +525,29 @@ function deRequire(elClass) { //Permet de selectionner au moins une checkbox
         }
     }
 }
-function previsialisation(){ //Validation des input pour la previsalisation
+function validationNomTable(numTab){ //On verifie qu'un autre table n'a pas le même nom
+    nombrebTable = document.getElementById("tables").childElementCount;
+    nomTable = document.getElementById("NomTable"+numTab).value;
+    id = "NomTable"+numTab;
 
+    tabExiste = false;
+    for(i=0;i<nombrebTable;i++){ //On parcourt les tableaux sauf celui que l'on compare
+        if(i!=numTab && document.getElementById("NomTable"+i).value == nomTable){
+            console.log(document.getElementById("NomTable"+i).value);
+            tabExiste = true;
+        }
+    }
+
+    if(tabExiste == true){
+        document.getElementById(id).removeAttribute("class");
+        document.getElementById(id).setAttribute("class", "form-control inputInvalid input-change");
+        document.getElementById(id).setAttribute("title", "Il existe déjà une table de ce nom");
+        LockGenerer();
+    } else {
+        document.getElementById(id).removeAttribute("class");
+        document.getElementById(id).removeAttribute("title");
+        document.getElementById(id).setAttribute("class", "form-control input-change");
+        UnLockGenerer();
+        document.getElementById("BoutonEnvois").removeAttribute("title");
+    }
 }

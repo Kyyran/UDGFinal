@@ -88,7 +88,7 @@ function interpreter(xmlDoc){
                         addRow(i);
                     }
 
-                    document.getElementById("tab" + i + "label" + j).value = tabDonnees[j].getAttribute("NomColonne");
+                    document.getElementById("tab" + i + "Label" + j).value = tabDonnees[j].getAttribute("NomColonne");
                     document.getElementById("tab" + i + "TypeDeDonnees" + j).value = tabDonnees[j].getAttribute("Type");
                     GestionOptionTDD(i, j);
 
@@ -153,6 +153,9 @@ function interpreter(xmlDoc){
                             document.getElementById("NombreDeLigne"+i).value = tabChildParametres[k].getAttribute("valeur");
                             break;
                         case "Sortie":
+                            console.log(tabChildParametres[k].attributes.length);
+                            if(tabChildParametres[k].attributes.length>0)
+                                deRequire('formatSortie'+i);
                             if(tabChildParametres[k].getAttribute("XML") == "oui"){
                                 document.getElementById("XML"+i).checked="true";
                             }

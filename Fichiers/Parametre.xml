@@ -10,15 +10,15 @@
             <Donnee Type="Dictionnaire" NomColonne="villes" NomDictionnaire="villes" ModeGeneration="uniforme"/>
 	        <Donnee Type="Numerique" NomColonne="CodeSexe" NomPerso="sexe" Min="1" Max="5" ModeGeneration="uniforme" codage="1;Homme;2;Femme"/>
             <Donnee Type="Numerique" NomColonne="Temperature" NomPerso="Celsius" NbDecimale="2" Min="0.00" Max="100" ModeGeneration="uniforme"/>
-            <Donnee Type="Formule" NomColonne="Fahrenheit" Formule= "Celsius 1.8 + 32" />
+            <Donnee Type="Formule" NomColonne="Fahrenheit" Formule= "Celsius * 1.8 + 32" />
 
         </Champs>
-        <Parametre>
-            <Sortie  XML="True" CSV="True"/>
-            <Nbligne valeur="1000"/>
+        <Parametres>
+            <Sortie  XML="oui" CSV="oui"/>
+            <NbLigne valeur="1000"/>
             <NomTable nom="test"/>
-            <Seed valeur="123" />
-        </Parametre>
+            <Graine valeur="123" />
+        </Parametres>
     </Table>
 
     <Table>
@@ -27,11 +27,11 @@
             <Donnee Type="Dictionnaire" NomColonne="noms" NomDictionnaire = "noms" ModeGeneration="uniforme"/>
             <Donnee Type="Numerique" NomColonne="Age" Min="15" Max="130" ModeGeneration="uniforme" Null="6%"/>
         </Champs>
-        <Parametre>
-            <Sortie CSV="True" SQL="True"/>
-            <Nbligne valeur="1000000"/>
+        <Parametres>
+            <Sortie CSV="oui" SQL="oui"/>
+            <NbLigne valeur="1000000"/>
             <NomTable nom="test2"/>
-            <Seed valeur="58125" />
-        </Parametre>
+            <Graine valeur="58125" />
+        </Parametres>
     </Table>
 </Generateur>
