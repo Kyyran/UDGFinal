@@ -309,7 +309,7 @@ function LabelLigneExist(numTab, inputVal){
 
 function operationsConforme(inputVal)
 {
-    var reg = /[\+\-\*\/*]/g;
+    var reg = /[\+\-\*\/]/g;
     var tableauOperateur = [];
     tableauOperateur = inputVal.match(reg);
 
@@ -319,7 +319,7 @@ function operationsConforme(inputVal)
     }
     var tableauSeparateurOuvrant = ["(","[","{"];
     var tableauSeparateurFermant= [")","]","}"];
-    var tableauRechercheOperateur = ["+","-","/","*"];
+    var tableauRechercheOperateur = ["+","-","/"];
 
     for(var i = 0; i < tableauOperateur.length ; i++)
     {
