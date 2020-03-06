@@ -1,0 +1,257 @@
+/* # (gH)   -_-  style.css  ;  TimeStamp (unix) : 21 Avril 2017 vers 13:02 */
+
+.pasvu       { display : none }
+.jaune       { background-color : yellow  }
+.gris        { background-color : #BBBBBB }
+.noir        { color : black }
+.orange      { background-color : orange }
+.blue		 { background-color : #1626ee }
+.white		 { color : white }
+.bleu_pastel { background-color   : #4eb0b8 }
+.bordFin     { border : thin solid }
+.titreUDG    { font-size : 36px ; font-weight : bold ; color : white  }
+.ghRouge     { color : #a30303 }
+
+/* fin des modifications (gH) */
+
+.checkbox{width:50px}
+.inline {
+  display: inline-block;
+}
+.titleprghp {
+  background:#0a0f49;
+  height: 46px;
+  color: white;
+  font-size: 23px;
+  height: 46px;
+  line-height: 40px;
+  padding: 0 0 0 20px;
+  margin: 20px 0 20px;
+  font-family: Comic;
+
+}
+#FormatSortie
+{
+  padding-top: 1%;
+}
+#BoutonEnvois
+{
+  float: right;
+}
+
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  text-decoration: none;
+  color: initial;
+}
+
+#BoutonAide{
+  margin-top: 1%;
+  position: fixed;
+  right: 1%;
+}
+#BoutonCharger
+{
+  float: right;
+}
+#boutons_table{
+  margin-bottom: 1%;
+}
+button{
+  padding: 1%;
+}
+.row{
+  margin-right: 0px;
+  margin-left:  0px;
+}
+.DGT{
+  padding-bottom: 1%;
+  border-bottom: 1px solid black;
+}
+
+}
+.formatSortie{
+  padding-bottom: 7px;
+  padding-top: 0px;
+}
+.Defaultab{
+  font-weight: bold;
+  font-style: italic;
+}
+#RAZ
+ {
+  float: right;
+  margin-top: 0.5%;
+    margin-right: 1%;
+ }
+#credit{
+  text-align: center;
+}
+.inputInvalid{
+  background-color : #F08080;
+}
+.inputInvalid:hover{
+
+}
+#AcceptInput { display: none; }
+.btn-ex{margin-left: 0.5%;}
+
+#CSV0 {
+
+padding-top: 2%; }
+
+body {
+  background-color: white; 
+}
+
+/* Changement de position du label null et de son input sur les différentes tables */
+.nullinputchange {
+position: relative;
+top: -20px;
+}
+
+.nullchange {
+left: -90px;
+}
+
+.nullchange2 {
+right: -50px;
+}
+
+/*définission des différents éléments d'ajout et suppression */
+.images {
+max-width:100%;
+max-height:100%;
+ width: 50px;
+height: 50px;
+}
+
+.plus1 {
+
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    
+}
+
+#plus2 {
+    background: transparent;
+    border: none !important;
+    font-size:0;
+}
+  
+#moins {
+    background: transparent;
+    border: none !important;
+    font-size:0;
+ }
+ 
+.croix 
+{
+    background: transparent;
+    border: none !important;
+    font-size:0;
+ }
+
+.image_croix 
+{
+max-width:100%;
+max-height:100%;
+width: 10px;
+height: 10px;
+} 
+ 
+ 
+/*Ajustement d'éléments en entête de tables */
+#CSV1 
+{
+padding-top: 2%; 
+}
+
+.espacement 
+{
+margin-right : 5px;
+}
+
+.form-group 
+{
+padding-bottom : 10px;
+}
+
+#NomFeuilleDeDonnees
+{
+margin-left: -15px;
+}
+
+.FormatDeSortie
+{
+padding-top: 10px;
+}
+
+.pos-checkbox
+{
+margin-top: 12px;
+}
+
+.label-checkbox
+{
+top: -10px;
+}
+
+
+.input-change
+{
+margin-left: -30px;
+margin-top: -5px;
+}
+
+.label-change 
+{
+padding-left: 5px;
+}
+
+
+/*Création du menu des langues */
+
+#menu ul {
+ margin:0;
+ padding:0;
+ list-style-type:none;
+ text-align:center;
+ }
+ 
+#menu li {
+ float:left;
+ margin:auto;
+ padding:0;
+ background-color:white;
+ }
+ 
+#menu li a {
+ display:block;
+ width:30px;
+ color:white;
+ text-decoration:none;
+ padding:5px;
+ }
+#menu li a:hover {
+ color:#FFD700;
+ }
+ 
+ #menu ul li ul {
+ display:none;
+ }
+ 
+ #menu ul li:hover ul {
+ display:block;
+ }
+#menu li:hover ul li {
+ float:none;
+ }
+
+#menu li ul {
+ position:absolute;
+ }

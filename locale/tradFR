@@ -1,0 +1,41 @@
+01-G&eacute;n&eacute;rateur de donn&eacute;es
+02-G&eacute;n&eacute;rateur 
+03-Universel
+04-de Donn&eacute;es
+05-Formulaire de g&eacute;n&eacute;ration&nbsp;:&nbsp;
+06-Remettre &agrave; z&eacute;ro
+07-Nom du projet :
+08-Nom de la Table&nbsp;:&nbsp;
+09-Nombre de lignes&nbsp;:
+10-Graine de g&eacute;n&eacute;ration&nbsp;:&nbsp;
+11-Formats de sortie&nbsp;:&nbsp;
+12-Nom&nbsp;
+13-&nbsp; &nbsp; Type de Donn&eacute;es&nbsp;
+14-Mode de G&eacute;n&eacute;ration&nbsp;
+15-Null&nbsp;
+16-Choisissez un type de donn&eacute;es
+17-Dictionnaire
+18-Numerique
+19-Formule
+20-Reference
+21-Choisissez un mode
+22-Al&eacute;atoire (uniforme)
+23-Loi Normale
+24-Loi Normale
+25-S&eacute;quentielle
+26-Entr&eacute;es/Sorties :
+27-Importer un fichier XML ou SQL
+28-exemple de fichier XML
+29-exemple de fichier SQL
+30-G&eacute;n&eacute;rer
+31-Exemples :
+32-Champ simple
+33-Champs Muti Tables
+34-Formule
+35-Codage
+36-Champs Coh&eacute;rents
+37-Supprime la ligne
+38-Ajoute une ligne
+39-Ajoute une table
+40-Supprime une table
+41-Afficher l'Aide

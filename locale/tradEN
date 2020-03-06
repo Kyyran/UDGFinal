@@ -1,0 +1,41 @@
+01-Data generator
+02- 
+03-Universal
+04-Data Generator
+05-Generation form&nbsp;:&nbsp;
+06-Reset form
+07-Project's name :
+08-Table's name&nbsp;:&nbsp;
+09-Number of lines&nbsp;:
+10-Generation seed&nbsp;:&nbsp;
+11-Output format&nbsp;:&nbsp;
+12-Name&nbsp;
+13-&nbsp; &nbsp; Data types&nbsp;
+14-Generation mode&nbsp;
+15-Null&nbsp;
+16-Select a data type
+17-Dictionary
+18-Numeric
+19-Formula
+20-Reference
+21-Select a mode
+22-Random (uniforme)
+23-Norm dist
+24-Norm dist
+25-sequential
+26-Input/Output :
+27-Import an XML or SQL file
+28-sample XML file
+29-sample SQL file
+30-Generate
+31-Examples :
+32-Single field
+33-Multi tables field
+34-Formula
+35-Coding
+36-coherent fields
+37-Delete a line
+38-Add a line
+39-Add a table
+40-Delete a table
+41-Show help
