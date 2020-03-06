@@ -162,6 +162,13 @@ function validationFormule(numTab,numLigne,nomId){ //Fonction de validation du t
         document.getElementById(id).setAttribute("title","Vérifiez si vous n'avez pas oublié de saisir un nom ou une constante après ou avant un opérateur ou si vous avez mis plusieurs espaces à la suite");
         LockGenerer();
     }
+    else if(!(verificationOperation(inputVal)))
+    {
+        document.getElementById(id).removeAttribute("class");
+        document.getElementById(id).setAttribute("class","form-control inputInvalid");
+        document.getElementById(id).setAttribute("title","Vérifier si vous n'avez pas oublié de saisir un opérateur");
+        LockGenerer();
+    }
     else if(inputVal.length == 0)
     {
         document.getElementById(id).removeAttribute("class");
@@ -231,6 +238,44 @@ function FormuleConforme(inputVal)
         return false;
     }
 }
+
+function verificationOperation(inputVal)
+{
+    var regexTableauNomColonneFormule = /([a-z|A-Z]{1,})\b/i;
+    var tableauNomColonneFormule = inputVal.split(regexTableauNomColonneFormule);
+    var regexTableauOperateur = /[\+\-\*\/]/g;
+    var indice = 0;
+
+    for(var i = 0 ;i < tableauNomColonneFormule.length;i++)
+    {
+        if(!regexTableauNomColonneFormule.test(tableauNomColonneFormule[i]))
+        {
+            tableauNomColonneFormule.splice(i,1);
+        }
+    }
+
+    var tableauOperateur = inputVal.match(regexTableauOperateur);
+    if(tableauOperateur == null && tableauNomColonneFormule.length > 1)
+    {
+        return false;
+    }
+
+    for(var i = 1 ; i < tableauNomColonneFormule.length; i++)
+    {
+        if(tableauNomColonneFormule.length != tableauOperateur.length+1)
+        {
+            return false;
+        }
+        else if(inputVal.indexOf(tableauNomColonneFormule[i-1]) > inputVal.indexOf(tableauOperateur[indice]) && inputVal.indexOf(tableauNomColonneFormule[i]) < inputVal.indexOf(tableauOperateur[indice]))
+        {
+            return false;
+        }
+        indice++;
+    }
+
+    return true;
+}
+
 function validationDateHeure(numTab,numLigne,nomId){ //Fonction de validation du type DateHeure
     var id = "tab"+numTab+nomId+numLigne;
     var inputVal = document.getElementById(id).value;
