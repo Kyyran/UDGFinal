@@ -15,8 +15,6 @@ $gen = $xml->createElement("Generateur");
 $data = array(); //Inutile ?
 $sortieCond = '-1';
 
-print_r($_POST);
-
 foreach ($_POST as $key => $val) {
     $key = trim($key);
     preg_match("/[0-9]+/", $key, $numeroTab);
@@ -157,63 +155,6 @@ $generation = "php generer.php $fichierXML $cheminProjet # ; ls -a $cheminProjet
 system($generation);
 #echo "GENERATION OK*" ;
 
-#######################################TEST#################################
-//TEST ET AFFICHAGE DES ERREURS XML XSD
-function libxml_display_error($error)
-{
-    $return = "<br/>\n";
-    switch ($error->level) {
-        case LIBXML_ERR_WARNING:
-            $return .= "<b>Warning $error->code</b>: ";
-            break;
-        case LIBXML_ERR_ERROR:
-            $return .= "<b>Error $error->code</b>: ";
-            break;
-        case LIBXML_ERR_FATAL:
-            $return .= "<b>Fatal Error $error->code</b>: ";
-            break;
-    }
-    $return .= trim($error->message);
-    if ($error->file) {
-        $return .=    " in <b>$error->file</b>";
-    }
-    $return .= " on line <b>$error->line</b>\n";
-
-    return $return;
-}
-
-function libxml_display_errors() {
-    $errors = libxml_get_errors();
-    foreach ($errors as $error) {
-        print libxml_display_error($error);
-    }
-    libxml_clear_errors();
-}
-
-// Enable user error handling
-libxml_use_internal_errors(true);
-
-$xml = new DOMDocument();
-$xml->load($fichierXML);
-
-####AFFICHAGE####
-
-echo "Récupération de tout le document :\n";
-// get completed xml document
-$xml->preserveWhiteSpace = false;
-$xml->formatOutput = true;
-echo $xml->saveXML() . "\n";
-echo " nom de la table : $nomTablePrevisualise \n\n";
-
-####AFFICHAGE####
-
-if (!$xml->schemaValidate('udg.xsd')) {
-    print '<b>DOMDocument::schemaValidate() Generated Errors!</b>';
-    libxml_display_errors();
-}
-
-#################################FIN#TEST##################################
-
 # 4. on crée un répertoire projet et l'archive zip avec les fichiers générés dont le rapport
 
 $deplacement = "mv $fichierXML $cheminProjet # ; cat $cheminProjet/$fichierXML " ;
@@ -246,13 +187,73 @@ if ($dbg==0) {
 
 } else {
 
-  echo "<html><head><title>udg</title></head><body><pre>UDG\n\n" ;
-  echo " generation  : $generation  \n\n";
-  echo " deplacement : $deplacement \n\n";
-  echo " zip         : $zipCmd      \n\n";
-  echo " archivage   : $zipFile     \n\n";
-  echo "</pre></body></html>\n" ;
+    echo "<html><head><title>udg</title></head><body><pre>UDG\n\n" ;
+    echo " generation  : $generation  \n\n";
+    echo " deplacement : $deplacement \n\n";
+    echo " zip         : $zipCmd      \n\n";
+    echo " archivage   : $zipFile     \n\n";
+    echo " fichierXML   : $fichierXML     \n\n";
+    echo " POST        : \n";
+    print_r($_POST);
+    echo "\n";
+    echo "</pre>";
+
+    // Enable user error handling
+    libxml_use_internal_errors(true);
+
+    $xml = new DOMDocument();
+    $xml->load("$fichierXML");
+
+    ####AFFICHAGE####
+
+    echo "Récupération de tout le document :\n";
+    // get completed xml document
+    $xml->preserveWhiteSpace = false;
+    $xml->formatOutput = true;
+    echo $xml->saveXML() . "\n";
+
+    ####AFFICHAGE####
+
+    if (!$xml->schemaValidate('udg.xsd')) {
+        print '<b>DOMDocument::schemaValidate() Generated Errors!</b>';
+        libxml_display_errors();
+    }
+
+    echo "</body></html>\n" ;
+
 
 } # fin si
+
+//TEST ET AFFICHAGE DES ERREURS XML XSD
+function libxml_display_error($error)
+{
+    $return = "<br/>\n";
+    switch ($error->level) {
+        case LIBXML_ERR_WARNING:
+            $return .= "<b>Warning $error->code</b>: ";
+            break;
+        case LIBXML_ERR_ERROR:
+            $return .= "<b>Error $error->code</b>: ";
+            break;
+        case LIBXML_ERR_FATAL:
+            $return .= "<b>Fatal Error $error->code</b>: ";
+            break;
+    }
+    $return .= trim($error->message);
+    if ($error->file) {
+        $return .=    " in <b>$error->file</b>";
+    }
+    $return .= " on line <b>$error->line</b>\n";
+
+    return $return;
+}
+
+function libxml_display_errors() {
+    $errors = libxml_get_errors();
+    foreach ($errors as $error) {
+        print libxml_display_error($error);
+    }
+    libxml_clear_errors();
+}
 
 ?>

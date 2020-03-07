@@ -5,7 +5,7 @@
 
         <Champs>
             <Donnee NomColonne="id"    Type="id"                      />
-            <Donnee NomColonne="ids"   Type="IDS"       Prefixe="MAT" />
+            <Donnee NomColonne="ids"   Type="IDS"       Prefixe="MAT" Suffixe=""/>
             <Donnee NomColonne="Age"   Type="Numerique" Min="20" Max="50" ModeGeneration="uniforme" Null="0%" Unite="ans"/>
             <Donnee NomColonne="Poids" Type="Numerique" Min="51" Max="130" ModeGeneration="uniforme" Unite="kilos"/>
         </Champs>

@@ -28,7 +28,6 @@ function ChampSimple(){ //EXEMPLE D'UNE TABLE SIMPLE
     document.getElementById("tab"+table+"Prefixe"+ligne).value = "PERS-";
     document.getElementById("tab"+table+"Suffixe"+ligne).value = "100";
     document.getElementById("tab"+table+"NbChiffres"+ligne).value = "10";
-    document.getElementById("tab"+table+"ModeDeGeneration"+ligne).setAttribute("disabled","disabled");
 
     //LIGNE 1
 
@@ -171,11 +170,11 @@ function ChampMultiTables(){ //EXEMPLE DE MULTIPLES TABLES
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"Label"+ligne).value ="mois";
-    document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Numerique";
+    document.getElementById("tab"+table+"Label"+ligne).value ="codeVendeur";
+    document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Reference";
     GestionOptionTDD(table,ligne);
-    document.getElementById("tab"+table+"Min"+ligne).value = "1";
-    document.getElementById("tab"+table+"Max"+ligne).value = "12";
+    document.getElementById("tab"+table+"TableReference"+ligne).value = "Vendeurs";
+    document.getElementById("tab"+table+"ColonneReference"+ligne).value = "idVendeur";
 
     //LIGNE 3
 
@@ -191,11 +190,11 @@ function ChampMultiTables(){ //EXEMPLE DE MULTIPLES TABLES
 
     addRow(table);
     ligne++;
-    document.getElementById("tab"+table+"Label"+ligne).value ="codeVendeur";
-    document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Reference";
+    document.getElementById("tab"+table+"Label"+ligne).value ="mois";
+    document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Numerique";
     GestionOptionTDD(table,ligne);
-    document.getElementById("tab"+table+"TableReference"+ligne).value = "Vendeurs";
-    document.getElementById("tab"+table+"ColonneReference"+ligne).value = "idVendeur";
+    document.getElementById("tab"+table+"Min"+ligne).value = "1";
+    document.getElementById("tab"+table+"Max"+ligne).value = "12";
 
 }
 function ChampFormule(){ //EXEMPLE DE FORMULE

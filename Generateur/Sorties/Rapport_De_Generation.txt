@@ -1,0 +1,112 @@
+RAPPORT de la commande generer Exemples/articles.xml 
+La génération du samedi 07 mars 2020 à 15:27:37 a duré : 0.00 secondes
+3 tables ont été générées.
+
+==================================================
+
+Table 1 : articles
+
+==================================================
+
+Données Générales : 
+
+   - nombre de lignes produites  : 10 
+   - la graine de génération est : 11276666 
+
+  Variable numéro 1 / 2 : id type id
+
+    la valeur minimale est de : 1
+    la valeur maximale est de : 10
+    la valeur moyenne  est de : 5.50
+    le nombre      de valeurs NULL est de :      0 
+    le pourcentage de valeurs NULL est de :      0 % 
+
+  Variable numéro 2 / 2 : refArticle type CodeArticle
+
+    la valeur minimale est de : HYBPk-164
+    la valeur maximale est de : ZFMCd-867
+    la valeur moyenne  est de : 0.00
+    le nombre      de valeurs NULL est de :      0 
+    le pourcentage de valeurs NULL est de :      0 % 
+
+
+==================================================
+
+Table 2 : vendeurs
+
+==================================================
+
+Données Générales : 
+
+   - nombre de lignes produites  : 3 
+   - la graine de génération est : 10276663 
+
+  Variable numéro 1 / 3 : id type id
+
+    la valeur minimale est de : 1
+    la valeur maximale est de : 3
+    la valeur moyenne  est de : 2.00
+    le nombre      de valeurs NULL est de :      0 
+    le pourcentage de valeurs NULL est de :      0 % 
+
+  Variable numéro 2 / 3 : vendeur type Dictionnaire
+
+    le nombre      de valeurs NULL est de :      0 
+    le pourcentage de valeurs NULL est de :      0 % 
+
+  Variable numéro 3 / 3 : refVendeur type Numerique
+
+    la valeur minimale est de : 933
+    la valeur maximale est de : 4792
+    la valeur moyenne  est de : 3,503.33
+    le nombre      de valeurs NULL est de :      0 
+    le pourcentage de valeurs NULL est de :      0 % 
+
+
+==================================================
+
+Table 3 : ventes
+
+==================================================
+
+Données Générales : 
+
+   - nombre de lignes produites  : 15 
+   - la graine de génération est : 102766666 
+
+  Variable numéro 1 / 7 : id type id
+
+    la valeur minimale est de : 1
+    la valeur maximale est de : 15
+    la valeur moyenne  est de : 8.00
+    le nombre      de valeurs NULL est de :      0 
+    le pourcentage de valeurs NULL est de :      0 % 
+
+  Variable numéro 2 / 7 : codeArticle type Reference
+
+
+  Variable numéro 3 / 7 : codeArticle type Reference
+
+
+  Variable numéro 4 / 7 : mois type Numerique
+
+    la valeur minimale est de : 1
+    la valeur maximale est de : 11
+    la valeur moyenne  est de : 6.00
+    le nombre      de valeurs NULL est de :      0 
+    le pourcentage de valeurs NULL est de :      0 % 
+
+  Variable numéro 5 / 7 : annee type Numerique
+
+    la valeur minimale est de : 2010
+    la valeur maximale est de : 2018
+    la valeur moyenne  est de : 2,014.27
+    le nombre      de valeurs NULL est de :      0 
+    le pourcentage de valeurs NULL est de :      0 % 
+
+  Variable numéro 6 / 7 : refVendeur type Reference
+
+
+  Variable numéro 7 / 7 : refVendeur type Reference
+
+

@@ -69,9 +69,9 @@
       </Champs>
 
       <Parametres>
-         <NomTable nom="minimal_horairesDepart"/>
-         <Sortie SQL="oui" XML="oui" CSV="oui" JSON="oui"/>
-         <NbLigne  valeur="3"/>
+         <NomTable  nom="minimal_horairesDepart"/>
+         <Sortie    SQL="oui" XML="oui" CSV="oui" JSON="oui"/>
+         <NbLigne   valeur="3"/>
          <Graine   valeur="666"/>
       </Parametres>
     </Table>
@@ -79,10 +79,10 @@
     <Table> <!-- table 6 -->
         <Champs>
             <Donnee NomColonne="id"     Type="id"           />
-            <Donnee NomColonne="age"    Type="Numerique" Min="18"   />
-            <Donnee NomColonne="poids"  Type="Numerique" Min="40"  Max="120" Unite="kg"  />
-            <Donnee NomColonne="taille" Type="Numerique" Min="140" Max="210" Unite="cm"  Null="2" />
-            <Donnee NomColonne="imc"    Type="IMC"   />
+            <Donnee NomColonne="age"    Type="Numerique"    Min="18"   />
+            <Donnee NomColonne="poids"  Type="Numerique"    Min="40"  Max="120" Unite="kg"  />
+            <Donnee NomColonne="taille" Type="Numerique"    Min="140" Max="210" Unite="cm"  Null="2" />
+            <Donnee NomColonne="imc"    Type="Formule"      Formule="poids/(taille*taille)"   />
         </Champs>
 
         <Parametres>
@@ -96,12 +96,12 @@
     <Table> <!-- table 7 -->
         <Champs>
             <Donnee NomColonne="id"         Type="id"           />
-            <Donnee NomColonne="double"     Type="Formule" Formule="id * 2"  />
-            <Donnee NomColonne="triPlusUn"  Type="Formule" Formule="id * 3 + 1"  />
-            <Donnee NomColonne="cinqPlus7"  Type="Formule" Formule="5 * id + 7"  />
-            <Donnee NomColonne="longueur"   Type="Numerique" Min="1" Max="5"  />
-            <Donnee NomColonne="largeur"    Type="Numerique" Min="1" Max="5"  Null="10%"/>
-            <Donnee NomColonne="aire"       Type="Formule"   Formule="longueur * largeur"  />
+            <Donnee NomColonne="double"     Type="Formule"      Formule="id * 2"  />
+            <Donnee NomColonne="triPlusUn"  Type="Formule"      Formule="id * 3 + 1"  />
+            <Donnee NomColonne="cinqPlus7"  Type="Formule"      Formule="5 * id + 7"  />
+            <Donnee NomColonne="longueur"   Type="Numerique"    Min="1"                 Max="5"  />
+            <Donnee NomColonne="largeur"    Type="Numerique"    Min="1"                 Max="5"     Null="10%"/>
+            <Donnee NomColonne="aire"       Type="Formule"      Formule="longueur * largeur"  />
         </Champs>
 
         <Parametres>
@@ -113,22 +113,19 @@
     </Table>
 
     <Table> <!-- table 8 -->
-
         <Champs>
             <Donnee NomColonne="id"      Type="id"                         />
-            <Donnee NomColonne="idEcole" Type="Numerique"    Min="100" Max="110"  />
-            <Donnee NomColonne="Enfant"  Type="Dictionnaire" NomDictionnaire="noms"    EnMajuscules="oui" />
-            <Donnee NomColonne="Prenom"  Type="Dictionnaire" NomDictionnaire="prenoms" EnMajuscules="non" />
-            <Donnee NomColonne="Classe"  Type="Numerique"    Min="1" Max="3" Codage="1;CE1;2;CE2;3;CE1-CE2" />
+            <Donnee NomColonne="idEcole" Type="Numerique"    Min="100"                  Max="110"  />
+            <Donnee NomColonne="Enfant"  Type="Dictionnaire" NomDictionnaire="noms"     EnMajuscules="oui" />
+            <Donnee NomColonne="Prenom"  Type="Dictionnaire" NomDictionnaire="prenoms"  EnMajuscules="non" />
+            <Donnee NomColonne="Classe"  Type="Numerique"    Min="1"                    Max="3"            Codage="1;CE1;2;CE2;3;CE1-CE2" />
         </Champs>
-
         <Parametres>
             <NomTable nom="lesCE1"/>
             <Sortie   XML="oui" CSV="oui" SQL="oui" JSON="oui" />
             <NbLigne  valeur="12"/>
             <Graine   valeur="123" />
         </Parametres>
-
     </Table>
 
     <Table><!-- table 9 -->
@@ -143,7 +140,7 @@
 
        <Parametres>
           <NomTable nom="horairesDepart"/>
-          <Sortie SQL="oui" XML="oui" CSV="oui" JSON="oui"/>
+          <Sortie   SQL="oui" XML="oui" CSV="oui" JSON="oui"/>
           <NbLigne  valeur="3"/>
           <Graine   valeur="666"/>
        </Parametres>

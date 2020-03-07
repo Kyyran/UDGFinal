@@ -4,11 +4,11 @@
         <Champs>
             <Donnee Type="Dictionnaire" NomColonne="Prenoms"            NomDictionnaire="Prenoms"   ModeGeneration="uniforme"       GenererDependance="True"/>
             <Donnee Type="Dictionnaire" NomColonne="noms"               NomDictionnaire = "noms"    ModeGeneration="uniforme"/>
-            <Donnee Type="Numerique"    NomColonne="Age"                Min="15"                    Max="130"                       ModeGeneration="uniforme"               Null="6%"   Unite="ans"/>
-            <Donnee Type="Numerique"    NomColonne="Poids"              NbDecimale="1"              Min="35.1"                      Max="300.9" ModeGeneration="uniforme"   Null="52"/>
-            <Donnee Type="Numerique"    NomColonne="Taille"             NbDecimale="2"              Min="1.01"                      Max="2.40" ModeGeneration="uniforme"    Null="6%"/>
+            <Donnee Type="Numerique"    NomColonne="Age"                Min="15"                    Max="130"                       ModeGeneration="uniforme"   Null="6%"                       Unite="ans"/>
+            <Donnee Type="Numerique"    NomColonne="Poids"              NbDecimale="1"              Min="35.1"                      Max="300.9"                 ModeGeneration="uniforme"       Null="52"/>
+            <Donnee Type="Numerique"    NomColonne="Taille"             NbDecimale="2"              Min="1.01"                      Max="2.40"                  ModeGeneration="uniforme"       Null="6%"/>
             <Donnee Type="Dictionnaire" NomColonne="villes"             NomDictionnaire="villes"    ModeGeneration="uniforme"/>
-            <Donnee Type="Numerique"    NomColonne="TemperatureCelsius" NbDecimale="2"              Min="0.00"                      Max="100" ModeGeneration="uniforme"/>
+            <Donnee Type="Numerique"    NomColonne="TemperatureCelsius" NbDecimale="2"              Min="0.00"                      Max="100"                   ModeGeneration="uniforme"/>
         </Champs>
         <Parametres>
             <NomTable   nom="test"/>
@@ -22,7 +22,7 @@
         <Champs>
             <Donnee Type="Dictionnaire" NomColonne="Prenoms"    NomDictionnaire="Prenoms"   ModeGeneration="unique"/>
             <Donnee Type="Dictionnaire" NomColonne="noms"       NomDictionnaire = "noms"    ModeGeneration="uniforme"/>
-            <Donnee Type="Numerique"    NomColonne="Age"        Min="15" Max="130"          ModeGeneration="uniforme" Null="6%"/>
+            <Donnee Type="Numerique"    NomColonne="Age"        Min="15"                    Max="130"                   ModeGeneration="uniforme"       Null="6%"/>
         </Champs>
         <Parametres>
             <NomTable   nom="test2"/>

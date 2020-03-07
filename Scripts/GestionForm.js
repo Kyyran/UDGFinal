@@ -75,7 +75,7 @@ function GestionOptionTDD(NumTab,Numligne){//gère le formulaire en fonction du 
       document.getElementById("tab"+NumTab+"ModeDeGeneration"+Numligne).setAttribute("disabled","disabled");
 
       SupChampsReference(NumTab, Numligne);
-      MDGSupOptions(NumTab,Numligne);
+      //MDGSupOptions(NumTab,Numligne);
       SupChampsNumerique(NumTab,Numligne);
       SupChampMultiple(NumTab,Numligne);
       SupChampsDictionnaire(NumTab,Numligne);
@@ -109,9 +109,10 @@ function GestionOptionTDD(NumTab,Numligne){//gère le formulaire en fonction du 
       break;
     case "IDS":
       UnLockGenerer();
+      document.getElementById("tab"+NumTab+"ModeDeGeneration"+Numligne).setAttribute("disabled","disabled");
 
       SupChampsReference(NumTab, Numligne);
-      MDGSupOptions(NumTab,Numligne);
+      //MDGSupOptions(NumTab,Numligne);
       SupChampsDictionnaire(NumTab,Numligne);
       SupChampMultiple(NumTab,Numligne);
       SupChampsFormule(NumTab, Numligne);
@@ -126,9 +127,10 @@ function GestionOptionTDD(NumTab,Numligne){//gère le formulaire en fonction du 
       break;
     case "id" :
       UnLockGenerer();
+      document.getElementById("tab"+NumTab+"ModeDeGeneration"+Numligne).setAttribute("disabled","disabled");
 
       SupChampsReference(NumTab, Numligne);
-      MDGSupOptions(NumTab,Numligne);
+      //MDGSupOptions(NumTab,Numligne);
       SupChampsDictionnaire(NumTab,Numligne);
       SupChampMultiple(NumTab,Numligne);
       SupChampsFormule(NumTab, Numligne);
@@ -242,7 +244,7 @@ function AjoutChampsNumerique(NumTab,Numligne){//Ajoute les champs min, max et u
 
     var min=document.createElement('input');
     min.setAttribute('type','text');
-    min.setAttribute('class','form-control required');
+    min.setAttribute('class','form-control');
     min.setAttribute('id',"tab"+NumTab+"Min"+Numligne);
     min.setAttribute('onchange',"numLigne("+NumTab+","+Numligne+",\"Min\" );");
     min.setAttribute('name',"tab"+NumTab+"Min"+Numligne);
@@ -263,7 +265,7 @@ function AjoutChampsNumerique(NumTab,Numligne){//Ajoute les champs min, max et u
 
     var  max=document.createElement('input');
     max.setAttribute('type','text');
-    max.setAttribute('class','form-control required');
+    max.setAttribute('class','form-control');
     max.setAttribute('id',"tab"+NumTab+"Max"+Numligne);
     max.setAttribute('name',"tab"+NumTab+"Max"+Numligne);
     max.setAttribute('onchange',"numLigne("+NumTab+","+Numligne+",\"Max\");");
@@ -298,7 +300,7 @@ function MDGAleatoire(NumTab,Numligne) {//ajoute le mode de génération aléato
   var selectMDG = document.getElementById('tab'+NumTab+"ModeDeGeneration"+Numligne);
   var OptionADD=document.createElement('option');
   OptionADD.setAttribute('value','Aleatoire');
-  OptionADD.innerHTML = "Aléatoire (uniforme)";
+  OptionADD.innerHTML = "Aléatoire (uniforme)&nbsp;&nbsp;&nbsp;";
   selectMDG.appendChild(OptionADD);
 }
 function MDGSequentielle (NumTab,Numligne) {//ajoute la génération séquentielle
@@ -714,6 +716,7 @@ function MDGSupOptions(NumTab,Numligne){ //supprime tous les modes de générati
     parentElement.removeChild(opts[0]);
   }
 }
+
 function GestionOptionMDG(NumTab,Numligne){//gère le formulaire en fonction du mode de génération choisi
   var selectMDGOption = document.getElementById('tab'+NumTab+'ModeDeGeneration'+Numligne);
   var choiceMDG = selectMDGOption.selectedIndex ;
@@ -1404,7 +1407,7 @@ function AjoutChampsIDS(NumTab,Numligne){ //Ajoute les champs préfixe, suffixe 
 
     var nbChiffres=document.createElement('input');
     nbChiffres.setAttribute('type','text');
-    nbChiffres.setAttribute('class','form-control required');
+    nbChiffres.setAttribute('class','form-control');
     nbChiffres.setAttribute('id',"tab"+NumTab+"NbChiffres"+Numligne);
     nbChiffres.setAttribute('onchange',"numLigne("+NumTab+","+Numligne+",\"NbChiffres\" );");
     nbChiffres.setAttribute('name',"tab"+NumTab+"NbChiffres"+Numligne);
@@ -1425,7 +1428,7 @@ function AjoutChampsIDS(NumTab,Numligne){ //Ajoute les champs préfixe, suffixe 
 
     var  suffixe=document.createElement('input');
     suffixe.setAttribute('type','text');
-    suffixe.setAttribute('class','form-control required');
+    suffixe.setAttribute('class','form-control');
     suffixe.setAttribute('id',"tab"+NumTab+"Suffixe"+Numligne);
     suffixe.setAttribute('name',"tab"+NumTab+"Suffixe"+Numligne);
     suffixe.setAttribute('onchange',"numLigne("+NumTab+","+Numligne+",\"Suffixe\");");
@@ -1568,7 +1571,7 @@ function AjoutChampsCodeArticle(NumTab,Numligne){//Ajoute le champ masque des do
 
     var masque=document.createElement('input');
     masque.setAttribute('type','text');
-    masque.setAttribute('class','form-control required');
+    masque.setAttribute('class','form-control');
     masque.setAttribute('id',"tab"+NumTab+"Masque"+Numligne);
     masque.setAttribute('onchange',"validationCodeArticle("+NumTab+","+Numligne+",\"Masque\" );");
     masque.setAttribute('name',"tab"+NumTab+"Masque"+Numligne);
