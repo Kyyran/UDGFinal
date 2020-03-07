@@ -91,9 +91,6 @@ function interpreter(xmlDoc){
                     document.getElementById("tab" + i + "Label" + j).value = tabDonnees[j].getAttribute("NomColonne");
                     document.getElementById("tab" + i + "TypeDeDonnees" + j).value = tabDonnees[j].getAttribute("Type");
                     GestionOptionTDD(i, j);
-
-
-                    console.log(tabDonnees[j].getAttribute("Type"));
                     
                     switch(tabDonnees[j].getAttribute("Type")){
                         case "Dictionnaire":
@@ -153,9 +150,6 @@ function interpreter(xmlDoc){
                             document.getElementById("NombreDeLigne"+i).value = tabChildParametres[k].getAttribute("valeur");
                             break;
                         case "Sortie":
-                            console.log(tabChildParametres[k].attributes.length);
-                            if(tabChildParametres[k].attributes.length>0)
-                                deRequire('formatSortie'+i);
                             if(tabChildParametres[k].getAttribute("XML") == "oui"){
                                 document.getElementById("XML"+i).checked="true";
                             }
@@ -167,6 +161,9 @@ function interpreter(xmlDoc){
                             }
                             if(tabChildParametres[k].getAttribute("JSON") == "oui"){
                                 document.getElementById("JSON"+i).checked="true";
+                            }
+                            if(tabChildParametres[k].attributes.length>0){ //Forcer les Sorties à non required
+                                deRequire('formatSortie'+i);
                             }
                             break;
                         case "Graine":

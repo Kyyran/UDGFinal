@@ -527,27 +527,31 @@ function deRequire(elClass) { //Permet de selectionner au moins une checkbox
 }
 function validationNomTable(numTab){ //On verifie qu'un autre table n'a pas le même nom
     nombrebTable = document.getElementById("tables").childElementCount;
-    nomTable = document.getElementById("NomTable"+numTab).value;
-    id = "NomTable"+numTab;
+    if(nombrebTable>1){
+        nomTable = document.getElementById("NomTable"+numTab).value;
 
-    tabExiste = false;
-    for(i=0;i<nombrebTable;i++){ //On parcourt les tableaux sauf celui que l'on compare
-        if(i!=numTab && document.getElementById("NomTable"+i).value == nomTable){
-            console.log(document.getElementById("NomTable"+i).value);
-            tabExiste = true;
+        if(nomTable!=""){
+            id = "NomTable"+numTab;
+
+            tabExiste = false;
+            for(i=0;i<nombrebTable;i++){ //On parcourt les tableaux sauf celui que l'on compare
+                if(i!=numTab && document.getElementById("NomTable"+i).value == nomTable){
+                    tabExiste = true;
+                }
+            }
+
+            if(tabExiste == true){
+                document.getElementById(id).removeAttribute("class");
+                document.getElementById(id).setAttribute("class", "form-control inputInvalid input-change");
+                document.getElementById(id).setAttribute("title", "Il existe déjà une table de ce nom");
+                LockGenerer();
+            } else {
+                document.getElementById(id).removeAttribute("class");
+                document.getElementById(id).removeAttribute("title");
+                document.getElementById(id).setAttribute("class", "form-control input-change");
+                UnLockGenerer();
+                document.getElementById("BoutonEnvois").removeAttribute("title");
+            }
         }
-    }
-
-    if(tabExiste == true){
-        document.getElementById(id).removeAttribute("class");
-        document.getElementById(id).setAttribute("class", "form-control inputInvalid input-change");
-        document.getElementById(id).setAttribute("title", "Il existe déjà une table de ce nom");
-        LockGenerer();
-    } else {
-        document.getElementById(id).removeAttribute("class");
-        document.getElementById(id).removeAttribute("title");
-        document.getElementById(id).setAttribute("class", "form-control input-change");
-        UnLockGenerer();
-        document.getElementById("BoutonEnvois").removeAttribute("title");
     }
 }

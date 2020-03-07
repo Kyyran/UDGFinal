@@ -828,7 +828,7 @@ function addTable(){//ajout d'une table
     InputNomTable.setAttribute('type',"text");
     InputNomTable.setAttribute('class',"form-control required input-change");
     InputNomTable.setAttribute('name',"NomTable"+VarNumTab);
-    InputNomTable.setAttribute('onchange',"ValidationInputParametreTable("+VarNumTab+",'NomTable');");
+    InputNomTable.setAttribute('onchange',"ValidationInputParametreTable("+VarNumTab+",'NomTable');validationNomTable("+VarNumTab+");");
     InputNomTable.setAttribute('id',"NomTable"+VarNumTab);
     InputNomTable.innerHTML = " ";
 
