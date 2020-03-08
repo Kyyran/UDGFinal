@@ -1,0 +1,90 @@
+<div class="container">
+    <div id = "ChampsGeneraux" class = "col-xs-12 col-sn-12 col-md-12 col-lg-12">
+        <div class="panel panel-primary " >
+            <div class = "panel-heading">
+                <h3 class="panel-title">General settings :</h3>
+            </div>
+            <div class = "panel-body">
+                <ul>
+                    <li>Project's name: Defines the name of the archive which will be downloadable via the "Generate" button</li>
+                    <li>Table's name : Generates a text file with SQL code which creates a table with this name and saves the output files with this name</li>
+                    <li>Number of line : Defines the number of rows of data to generate</li>
+                    <li>Generation seed : Allows you to choose a number which, if you use it again, will give you the same data during generation</li>
+                    <li>Output format : Choose the output format (s) for the data</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div id = "ChampsDonnees" class = "col-xs-12 col-sn-12 col-md-12 col-lg-12">
+        <div class="panel panel-primary " >
+            <div class = "panel-heading">
+                <h3 class="panel-title">Data fields :</h3>
+            </div>
+            <div class = "panel-body">
+                <ul>
+                    <li>Name: name of the data, provides a header with this name in the CSV and / or a field of this name with values in a table in SQL</li>
+                    <li>
+                        <p>Data types :</p>
+                        <ul>
+                            <li>Dictionary: allows you to choose from a list of available dictionaries. The dictionaries are related to a theme.</li>
+                            <li>Numeric: allows you to randomly generate a number between a minimum and a maximum value</li>
+                            <li>Formula: calculates values according to a formula of the model a * x [ + - * / or % for modulo] b where a, x and b can be column names or numbers.</li>
+                        </ul>
+                    </li>
+                    <li>Null: Number of rows of data that will not be defined, this value can be entered as a percentage or as an absolute value</li>
+                    <li>Coding: correspondence system to match values to codes, such as "1; Man" will associate code 1 with the value "Man"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div id = "ChampBoutons" class = "col-xs-12 col-sn-12 col-md-12 col-lg-12">
+        <div class="panel panel-primary " >
+            <div class = "panel-heading">
+                <h3 class="panel-title">The different buttons :</h3>
+            </div>
+            <div class = "panel-body">
+                <ul>
+                    <li>Reset : reloads the page</li>
+                    <li>Add / Remove row : allows adding / removing a data field</li>
+                    <li>Add / Delete table : add a table in last position or delete the last table</li>
+                    <li>Import an XML or SQL file: will allow you to preload the generation page via an SQL table creation or an XML configuration file </li>
+                    <li>Generate : launches the generation script </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div id = "ChampExemples" class = "col-xs-12 col-sn-12 col-md-12 col-lg-12">
+        <div class="panel panel-primary " >
+            <div class = "panel-heading">
+                <h3 class="panel-title">The examples :</h3>
+            </div>
+            <div class = "panel-body">
+                <ul>
+                    <li>Will preload the page ready to be generated in order to show an example of simple data to generate.</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div id = "FichierExemple" class = "col-xs-12 col-sn-12 col-md-12 col-lg-12">
+        <div class="panel panel-primary " >
+            <div class = "panel-heading">
+                <h3 class="panel-title">Sample File :</h3>
+            </div>
+            <div class = "panel-body">
+                <ul>
+                    <li>Here is a configuration file in XML format : <a href="Fichiers/Parametre.xml">display</a> </li>
+                    <li>Here is an example of a valid mysql file : <a href="Fichiers/titanic_mysql_cr.txt">display</a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

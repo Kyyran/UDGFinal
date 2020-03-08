@@ -24,7 +24,7 @@
 24-Loi Normale
 25-S&eacute;quentielle
 26-Entr&eacute;es/Sorties :
-27-Importer un fichier XML
+27-Importer un fichier XML ou SQL
 28-exemple de fichier XML
 29-exemple de fichier SQL
 30-G&eacute;n&eacute;rer
@@ -39,3 +39,7 @@
 39-Ajoute une table
 40-Supprime une table
 41-Afficher l'Aide
+42-Prévisualiser
+43-Date et Heure
+44-DateHeure
+45-CodeArticle

@@ -13,13 +13,13 @@
 13-&nbsp; &nbsp; Data types&nbsp;
 14-Generation mode&nbsp;
 15-Null&nbsp;
-16-Select a data type
+16-Select a data type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 17-Dictionary
 18-Numeric
 19-Formula
 20-Reference
-21-Select a mode
-22-Random (uniforme)
+21-Select a mode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+22-Random (uniform)
 23-Norm dist
 24-Norm dist
 25-sequential
@@ -33,9 +33,13 @@
 33-Multi tables field
 34-Formula
 35-Coding
-36-coherent fields
+36-Coherent Fields
 37-Delete a line
 38-Add a line
 39-Add a table
 40-Delete a table
 41-Show help
+42-Preview
+43-Date and Hour
+44-DateHour
+45-ArticleCode

@@ -8,6 +8,11 @@ if (!isset($_GET["lang"])) {
 }
 
 setcookie(lang_Cookie, $lang);
+if ($_GET["lang"]=="FR") { 
+    $aide="aide.html"; 
+  }else{ 
+    $aide="help.html"; 
+  }
 
 ?>
 
@@ -44,17 +49,14 @@ setcookie(lang_Cookie, $lang);
           <li>
             <a>
               <img src="./Style/image/Flags/fr.png" title="Français" onclick="Change_lang(1)" />
-            <ul class="sub_lang">
-              <li>
-                <a>
-                <img src="./Style/image/Flags/en.png" title="Anglais" onclick="Change_lang(2)" />
-                </a>
-              </li>
-            </ul>
+            </a>
+            <a>
+              <img src="./Style/image/Flags/en.png" title="Anglais" onclick="Change_lang(2)" />
+            </a>
           </li>
         </ul>
       </div>
-      <span onclick="aide(1)" id="BoutonAide" class="btn btn-lg btn-info" style="z-index: 9999"><?php echo trad("41",$lang); ?></span>
+      <span onclick="aide(1,'<?php echo $lang ; ?>')" id="BoutonAide" class="btn btn-lg btn-info" style="z-index: 9999"><?php echo trad("41",$lang); ?> </span>
     </div>
 
     <div class="jumbotron">
@@ -73,7 +75,7 @@ setcookie(lang_Cookie, $lang);
     <div class="container"><!-- pour l'aide -->
       <div class="row pasvu" id="aide">
         <?php
-        include("aide.html") ;
+        include("$aide") ;
         ?>
       </div>
     </div>
@@ -143,8 +145,8 @@ setcookie(lang_Cookie, $lang);
                   <option value = "IDS" >IDS</option>
                   <option value = "Numerique"><?php echo trad("18",$lang); ?></option>
                   <option value = "Dictionnaire" ><?php echo trad("17",$lang); ?></option>
-                  <option value = "DateHeure" >DateHeure</option>
-                  <option value = "CodeArticle" >CodeArticle</option>
+                  <option value = "DateHeure" ><?php echo trad("44",$lang); ?></option>
+                  <option value = "CodeArticle" ><?php echo trad("45",$lang); ?></option>
                   <option value = "Reference"><?php echo trad("20",$lang); ?></option>
                   <option value = "Formule"><?php echo trad("19",$lang); ?></option>           
                 </select>
@@ -174,7 +176,8 @@ setcookie(lang_Cookie, $lang);
               <button type="button" class = "btn btn-lg btn-default white blue" id="btnOpen"><b><?php echo trad("27",$lang); ?></b></button>
               <input type="file" id="AcceptInput" accept=".sql,.xml,.txt"/>
               <a href="Fichiers/Parametre.xml" class = "btn btn-lg btn-default white blue" id="btnOpen2"><b><?php echo trad("28",$lang); ?></b></a>
-              <button type="submit" id="BoutonPrevi" class="btn btn-lg btn-default white bleu_pastel">Pr&eacute;visualiser</button>
+
+              <button type="submit" id="BoutonPrevi" class="btn btn-lg btn-default white bleu_pastel"><?php echo trad("42",$lang); ?></button>
               <button type="submit" id="BoutonEnvois" class="btn btn-lg btn-default white bleu_pastel"><?php echo trad("30",$lang); ?></button>
             </div>
           </div>
@@ -194,7 +197,7 @@ setcookie(lang_Cookie, $lang);
             <button type="submit" id="ChampsMultiTabBtn" class="btn btn-lg btn-default btn-ex white blue" onclick="ChampMultiTables();"><?php echo trad("33",$lang); ?></button>
             <button type="submit" id="CodageBtn"         class="btn btn-lg btn-default btn-ex white blue" onclick="Codage();"><?php echo trad("35",$lang); ?></button>
             <button type="submit" id="ChampsCoherentBtn" class="btn btn-lg btn-default btn-ex white blue" onclick="DonneeCoherente();"><?php echo trad("36",$lang); ?></button>
-            <button type="submit" id="ChampsDateHeureBtn" class="btn btn-lg btn-default btn-ex white blue" onclick="DateHeure();">Date Heure</button>
+            <button type="submit" id="ChampsDateHeureBtn" class="btn btn-lg btn-default btn-ex white blue" onclick="DateHeure();"><?php echo trad("43",$lang); ?></button>
           </div>
         </div>
       </div>

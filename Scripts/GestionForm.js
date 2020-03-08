@@ -282,7 +282,11 @@ function AjoutChampsNumerique(NumTab,Numligne){//Ajoute les champs min, max et u
     var  unitelabel=document.createElement('label');
     unitelabel.setAttribute('for',"tab"+NumTab+"Unite"+Numligne);
     unitelabel.setAttribute('id',"tab"+NumTab+"LabelUnite"+Numligne);
-    unitelabel.innerHTML = " Unité :";
+    if (lang == "FR") {
+      unitelabel.innerHTML = " Unité :";}
+    else {
+      unitelabel.innerHTML = " Unit :";}
+    
 
     var  unite=document.createElement('input');
     unite.setAttribute('type','text');
@@ -300,7 +304,11 @@ function MDGAleatoire(NumTab,Numligne) {//ajoute le mode de génération aléato
   var selectMDG = document.getElementById('tab'+NumTab+"ModeDeGeneration"+Numligne);
   var OptionADD=document.createElement('option');
   OptionADD.setAttribute('value','Aleatoire');
-  OptionADD.innerHTML = "Aléatoire (uniforme)&nbsp;&nbsp;&nbsp;";
+  if (lang == "FR") {
+    OptionADD.innerHTML = "Aléatoire (uniforme)&nbsp;&nbsp;&nbsp;";}
+  else {
+    OptionADD.innerHTML = "Random (uniform)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";}
+  
   selectMDG.appendChild(OptionADD);
 }
 function MDGSequentielle (NumTab,Numligne) {//ajoute la génération séquentielle
@@ -308,7 +316,11 @@ function MDGSequentielle (NumTab,Numligne) {//ajoute la génération séquentiel
 
   var OptionADD=document.createElement('option');
   OptionADD.setAttribute('value','sequentielle');
-  OptionADD.innerHTML = " Séquentielle";
+  if (lang == "FR") {
+    OptionADD.innerHTML = " Séquentielle";}
+  else {
+    OptionADD.innerHTML = " Sequential";}
+  
   selectMDG.appendChild(OptionADD);
 }
 function MDGCodage(NumTab,Numligne) {
@@ -316,7 +328,11 @@ function MDGCodage(NumTab,Numligne) {
 
     var OptionADD=document.createElement('option');
     OptionADD.setAttribute('value','Codage');
-    OptionADD.innerHTML = "Codage";
+    if (lang == "FR") {
+      OptionADD.innerHTML = "Codage";}
+    else {
+      OptionADD.innerHTML = "Coding";}
+    
     selectMDG.appendChild(OptionADD);
 }
 function MDGLoiNormale (NumTab,Numligne) {//ajoute la génération par la loi normale
@@ -324,7 +340,11 @@ function MDGLoiNormale (NumTab,Numligne) {//ajoute la génération par la loi no
 
   var OptionADD=document.createElement('option');
   OptionADD.setAttribute('value','LoiNormale');
-  OptionADD.innerHTML = " Loi Normale";
+  if (lang == "FR") {
+    OptionADD.innerHTML = " Loi Normale";}
+  else {
+    OptionADD.innerHTML = " Normal Law";}
+  
   selectMDG.appendChild(OptionADD);
 }
 function AjoutFormule (NumTab,Numligne) {//ajoute la génération par formule//-----
@@ -337,7 +357,11 @@ function AjoutFormule (NumTab,Numligne) {//ajoute la génération par formule//-
     var formulelabel=document.createElement('label');
     formulelabel.setAttribute('id',"tab"+NumTab+"LabelFormule"+Numligne);
     formulelabel.setAttribute('for',"tab"+NumTab+"Formule"+Numligne);
-    formulelabel.innerHTML = " Formule :";
+    if (lang == "FR") {
+      formulelabel.innerHTML = " Formule :";}
+    else {
+      formulelabel.innerHTML = " Formula :";}
+    
 
     var formule=document.createElement('input');
     formule.setAttribute('type','text');
@@ -367,7 +391,10 @@ function MDGDictionnaire (NumTab,Numligne) {//ajoute la génération par diction
         var  DicoLabel=document.createElement('label');
         DicoLabel.setAttribute('id',"tab"+NumTab+"LabelDico"+Numligne);
         DicoLabel.setAttribute('for',"tab"+NumTab+"Dico"+Numligne);
-        DicoLabel.innerHTML = "Dictionnaire :";
+        if (lang == "FR") {
+          DicoLabel.innerHTML = "Dictionnaire :";}
+        else {
+          DicoLabel.innerHTML = "Dictionary :";}
 
         var SelectDico=document.createElement('select');
         SelectDico.setAttribute('class',"form-control");
@@ -378,95 +405,164 @@ function MDGDictionnaire (NumTab,Numligne) {//ajoute la génération par diction
 
         var OptDico0 = document.createElement('option');
         OptDico0.setAttribute('class',"Defaultab");
-        OptDico0.innerHTML="Choisissez un Dictionnaire";
-
+        if (lang == "FR") {
+          OptDico0.innerHTML="Choisissez un Dictionnaire";}
+        else {
+          OptDico0.innerHTML="Choose a Dictionary";}
+        
         var OptDico1 = document.createElement('option');
         OptDico1.setAttribute('value',"Prenoms");
-        OptDico1.innerHTML=" Prénoms";
+        if (lang == "FR") {
+          OptDico1.innerHTML=" Prénoms";}
+        else {
+          OptDico1.innerHTML=" First names";}
 
         var OptDico2 = document.createElement('option');
         OptDico2.setAttribute('value',"noms");
-        OptDico2.innerHTML=" Noms";
+        if (lang == "FR") {
+          OptDico2.innerHTML=" Noms";}
+        else {
+          OptDico2.innerHTML=" Last Names";}
 
         var OptDico3 = document.createElement('option');
         OptDico3.setAttribute('value',"villes");
-        OptDico3.innerHTML="Villes";
+        if (lang == "FR") {
+          OptDico3.innerHTML="Villes";}
+        else {
+          OptDico3.innerHTML="Towns";}
 
         var OptDico4 = document.createElement('option');
         OptDico4.setAttribute('value',"titre_film");
-        OptDico4.innerHTML="Titres de film";
+        if (lang == "FR") {
+          OptDico4.innerHTML="Titres de film";}
+        else {
+          OptDico4.innerHTML="Movie titles";}
 
         var OptDico5 = document.createElement('option');
         OptDico5.setAttribute('value',"acteurs");
-        OptDico5.innerHTML="Acteurs";
+        if (lang == "FR") {
+          OptDico5.innerHTML="Acteurs";}
+        else {
+          OptDico5.innerHTML="Actors";}
 
         var OptDico6 = document.createElement('option');
         OptDico6.setAttribute('value',"langage_informatique");
-        OptDico6.innerHTML="Langages Informatique";
+        if (lang == "FR") {
+          OptDico6.innerHTML="Langages Informatique";}
+        else {
+          OptDico6.innerHTML="Computer languages";}
 
         var OptDico7 = document.createElement('option');
         OptDico7.setAttribute('value',"departement");
-        OptDico7.innerHTML="Département";
+        if (lang == "FR") {
+          OptDico7.innerHTML="Département";}
+        else {
+          OptDico7.innerHTML="Department";}
 
         var OptDico8 = document.createElement('option');
         OptDico8.setAttribute('value',"entreprise_pharma");
-        OptDico8.innerHTML="Entreprises pharmaceutique";
+        if (lang == "FR") {
+          OptDico8.innerHTML="Entreprises pharmaceutique";}
+        else {
+          OptDico8.innerHTML="Pharmaceutical companies";}
 
         var OptDico9 = document.createElement('option');
         OptDico9.setAttribute('value',"evenements_historiques");
-        OptDico9.innerHTML="Evenements Historiques";
+        if (lang == "FR") {
+          OptDico9.innerHTML="Evenements Historiques";}
+        else {
+          OptDico9.innerHTML="Historical Events";}
 
         var OptDico10 = document.createElement('option');
         OptDico10.setAttribute('value',"medic");
-        OptDico10.innerHTML="Medicaments";
+        if (lang == "FR") {
+          OptDico10.innerHTML="Medicaments";}
+        else {
+          OptDico10.innerHTML="Medecines";}
 
         var OptDico11 = document.createElement('option');
         OptDico11.setAttribute('value',"metiers");
-        OptDico11.innerHTML="Métiers";
+        if (lang == "FR") {
+          OptDico11.innerHTML="Métiers";}
+        else {
+          OptDico11.innerHTML="Professions";}
 
         var OptDico12 = document.createElement('option');
         OptDico12.setAttribute('value',"molecules");
-        OptDico12.innerHTML="Molécules";
+        if (lang == "FR") {
+          OptDico12.innerHTML="Molécules";}
+        else {
+          OptDico12.innerHTML="Molecules";}
 
         var OptDico13 = document.createElement('option');
         OptDico13.setAttribute('value',"nationalite");
-        OptDico13.innerHTML="Nationalitées";
+        if (lang == "FR") {
+          OptDico13.innerHTML="Nationalitées";}
+        else {
+          OptDico13.innerHTML="Nationalities";}
 
         var OptDico14 = document.createElement('option');
         OptDico14.setAttribute('value',"pays");
-        OptDico14.innerHTML="Pays";
+        if (lang == "FR") {
+          OptDico14.innerHTML="Pays";}
+        else {
+          OptDico14.innerHTML="Countries";}
 
         var OptDico15 = document.createElement('option');
         OptDico15.setAttribute('value',"personnages_historiques");
-        OptDico15.innerHTML="Personnages Historiques";
+        if (lang == "FR") {
+          OptDico15.innerHTML="Personnages Historiques";}
+        else {
+          OptDico15.innerHTML="Historical Figures";}
 
         var OptDico16 = document.createElement('option');
         OptDico16.setAttribute('value',"producteurs");
-        OptDico16.innerHTML="Producteurs de films";
+        if (lang == "FR") {
+          OptDico16.innerHTML="Producteurs de films";}
+        else {
+          OptDico16.innerHTML="Films Producers";}
 
         var OptDico17 = document.createElement('option');
         OptDico17.setAttribute('value',"realisateur");
-        OptDico17.innerHTML="Realisateur";
+        if (lang == "FR") {
+          OptDico17.innerHTML="Realisateur";}
+        else {
+          OptDico17.innerHTML="Director";}
 
         var OptDico18 = document.createElement('option');
         OptDico18.setAttribute('value',"regions");
-        OptDico18.innerHTML="Régions";
+        if (lang == "FR") {
+          OptDico18.innerHTML="Régions";}
+        else {
+          OptDico18.innerHTML="Regions";}
 
         var OptDico19 = document.createElement('option');
         OptDico19.setAttribute('value',"scenariste");
-        OptDico19.innerHTML="Scénariste";
+        if (lang == "FR") {
+          OptDico19.innerHTML="Scénariste";}
+        else {
+          OptDico19.innerHTML="Scenarist";}
 
         var OptDico20 = document.createElement('option');
         OptDico20.setAttribute('value',"societe_production");
-        OptDico20.innerHTML="Sociétés de production";
+        if (lang == "FR") {
+          OptDico20.innerHTML="Sociétés de production";}
+        else {
+          OptDico20.innerHTML="Production Companies";}
 
         var OptDico21 = document.createElement('option');
         OptDico21.setAttribute('value',"types_trains");
-        OptDico21.innerHTML="Types Trains";
+        if (lang == "FR") {
+          OptDico21.innerHTML="Types Trains";}
+        else {
+          OptDico21.innerHTML="Trains Types";}
 
         var OptDico22 = document.createElement('option');
         OptDico22.setAttribute('value',"capitales_europeennes");
-        OptDico22.innerHTML="Capitales européennes";
+        if (lang == "FR") {
+          OptDico22.innerHTML="Capitales Européennes";}
+        else {
+          OptDico22.innerHTML="European capitals";}
 
         div.appendChild(DicoLabel);
         div.appendChild(SelectDico);
@@ -510,203 +606,248 @@ function SupChampsDictionnaire(NumTab,Numligne){ //Supprime les éléments d'un 
     }
 }
 function addRow(NumTab){//ajoute une ligne
-    var row = document.getElementById("tab"+NumTab+"Lignes");
-    TabIndex[VarNumTab] = TabIndex[VarNumTab]+1;
+  var row = document.getElementById("tab"+NumTab+"Lignes");
+  TabIndex[VarNumTab] = TabIndex[VarNumTab]+1;
 
-    var Div_1=document.createElement('div');
-    Div_1.setAttribute('id',"tab"+NumTab+"Ligne"+TabIndex[VarNumTab]);
-    Div_1.setAttribute('class',"row col-xs-12 col-sn-12 col-md-12 col-lg-12 form-inline form-group");
+  var Div_1=document.createElement('div');
+  Div_1.setAttribute('id',"tab"+NumTab+"Ligne"+TabIndex[VarNumTab]);
+  Div_1.setAttribute('class',"row col-xs-12 col-sn-12 col-md-12 col-lg-12 form-inline form-group");
 
-    var InputNom=document.createElement('input');
-    InputNom.setAttribute('type',"text");
-    InputNom.setAttribute('class',"form-control col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement");
-    InputNom.setAttribute('name',"tab"+NumTab+"Label"+TabIndex[VarNumTab]);
-    InputNom.setAttribute('onchange',"nomLigne("+VarNumTab+","+TabIndex[VarNumTab]+",\"Label\" );");
-    InputNom.setAttribute('id',"tab"+NumTab+"Label"+TabIndex[VarNumTab]);
-    InputNom.innerHTML = " ";
+  var InputNom=document.createElement('input');
+  InputNom.setAttribute('type',"text");
+  InputNom.setAttribute('class',"form-control col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement");
+  InputNom.setAttribute('name',"tab"+NumTab+"Label"+TabIndex[VarNumTab]);
+  InputNom.setAttribute('onchange',"nomLigne("+VarNumTab+","+TabIndex[VarNumTab]+",\"Label\" );");
+  InputNom.setAttribute('id',"tab"+NumTab+"Label"+TabIndex[VarNumTab]);
+  InputNom.innerHTML = " ";
 
-    var SelectTDD=document.createElement('select');
-    SelectTDD.setAttribute('class',"form-control col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement");
-    SelectTDD.setAttribute('id',"tab"+NumTab+"TypeDeDonnees"+TabIndex[VarNumTab]);
-    SelectTDD.setAttribute('name',"tab"+NumTab+"TypeDeDonnees"+TabIndex[VarNumTab]);
-    SelectTDD.setAttribute('onchange',"GestionOptionTDD("+NumTab+","+TabIndex[VarNumTab]+");");
-    SelectTDD.setAttribute('required','');
+  var SelectTDD=document.createElement('select');
+  SelectTDD.setAttribute('class',"form-control col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement");
+  SelectTDD.setAttribute('id',"tab"+NumTab+"TypeDeDonnees"+TabIndex[VarNumTab]);
+  SelectTDD.setAttribute('name',"tab"+NumTab+"TypeDeDonnees"+TabIndex[VarNumTab]);
+  SelectTDD.setAttribute('onchange',"GestionOptionTDD("+NumTab+","+TabIndex[VarNumTab]+");");
+  SelectTDD.setAttribute('required','');
 
-    var OptTDD0 = document.createElement('option');
-    OptTDD0.setAttribute('class',"Defaultab");
-    OptTDD0.setAttribute('value',"");
-    if (lang == "FR") {
-      OptTDD0.innerHTML="Choisissez un type de données";}
-    else {
-      OptTDD0.innerHTML="Select a data type";}
+  var OptTDD0 = document.createElement('option');
+  OptTDD0.setAttribute('class',"Defaultab");
+  OptTDD0.setAttribute('value',"");
+  if (lang == "FR") {
+    OptTDD0.innerHTML="Choisissez un type de données";}
+  else {
+    OptTDD0.innerHTML="Select a data type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp";}
 
-    var OptTDD1 = document.createElement('option');
-    OptTDD1.setAttribute('value',"id");
-    OptTDD1.innerHTML="ID";
-    var OptTDD2 = document.createElement('option');
-    OptTDD2.setAttribute('value',"IDS");
-    OptTDD2.innerHTML="IDS";
-    var OptTDD3 = document.createElement('option');
-    OptTDD3.setAttribute('value',"Numerique");
-    OptTDD3.innerHTML="Numerique";
-    var OptTDD4 = document.createElement('option');
-    OptTDD4.setAttribute('value',"Dictionnaire");
-    OptTDD4.innerHTML="Dictionnaire";
-    var OptTDD5 = document.createElement('option');
-    OptTDD5.setAttribute('value',"DateHeure");
-    OptTDD5.innerHTML="DateHeure";
-    var OptTDD6 = document.createElement('option');
-    OptTDD6.setAttribute('value',"CodeArticle");
-    OptTDD6.innerHTML="CodeArticle";
-    var OptTDD7 = document.createElement('option');
-    OptTDD7.setAttribute('value',"Reference");
-    OptTDD7.innerHTML="Reference";
-    var OptTDD8 = document.createElement('option');
-    OptTDD8.setAttribute('value',"Formule");
-    OptTDD8.innerHTML="Formule";
+  var OptTDD1 = document.createElement('option');
+  OptTDD1.setAttribute('value',"id");
+  OptTDD1.innerHTML="ID";
 
-    var SelectMDG=document.createElement('select');
-    SelectMDG.setAttribute('class',"form-control col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement");
-    SelectMDG.setAttribute('disabled',"disabled");
-    SelectMDG.setAttribute('id',"tab"+NumTab+"ModeDeGeneration"+TabIndex[VarNumTab]);
-    SelectMDG.setAttribute('name',"tab"+NumTab+"ModeDeGeneration"+TabIndex[VarNumTab]);
-    SelectMDG.setAttribute('onchange',"GestionOptionMDG("+NumTab+","+TabIndex[VarNumTab]+");");
+  var OptTDD2 = document.createElement('option');
+  OptTDD2.setAttribute('value',"IDS");
+  OptTDD2.innerHTML="IDS";
 
-    var OptMDG0 = document.createElement('option');
-    OptMDG0.setAttribute('class',"Defaultab");
-    if (lang=="FR") {
-      OptMDG0.innerHTML="Choisissez un mode";}
-    else { 
-      OptMDG0.innerHTML="Select a mode";}
+  var OptTDD3 = document.createElement('option');
+  OptTDD3.setAttribute('value',"Numerique");
+  if (lang=="FR") {
+    OptTDD3.innerHTML="Numerique";}
+  else {
+    OptTDD3.innerHTML="Numeric";}
 
-    var OptMDG1 = document.createElement('option');
-    OptMDG1.setAttribute('value',"Aleatoire");
-    OptMDG1.innerHTML=" Aléatoire";
-    var OptMDG2 = document.createElement('option');
-    OptMDG2.setAttribute('value',"LoiNormale");
-    OptMDG2.innerHTML=" Loi normale";
-    var OptMDG3 = document.createElement('option');
-    OptMDG3.setAttribute('value',"Sequentielle");
-    OptMDG3.innerHTML=" Séquentielle";
-    var OptMDG4 = document.createElement('option');
-    OptMDG4.setAttribute('value',"Codage");
-    OptMDG4.innerHTML="Codage";
+  var OptTDD4 = document.createElement('option');
+  OptTDD4.setAttribute('value',"Dictionnaire");
+  if (lang=="FR") {
+    OptTDD4.innerHTML="Dictionnaire"; }
+  else {
+    OptTDD4.innerHTML="Dictionary"; }
 
-    var Div_Min = document.createElement('div');
-    Div_Min.setAttribute('id',"tab"+NumTab+"MinParent"+TabIndex[VarNumTab]);
-    Div_Min.setAttribute('class',"form-group col-auto");
+  var OptTDD5 = document.createElement('option');
+  OptTDD5.setAttribute('value',"DateHeure");
+  if (lang=="FR") {
+    OptTDD5.innerHTML="DateHeure";}
+  else {
+    OptTDD5.innerHTML="DateHour";}
 
-    var Div_Max = document.createElement('div');
-    Div_Max.setAttribute('id',"tab"+NumTab+"MaxParent"+TabIndex[VarNumTab]);
-    Div_Max.setAttribute('class',"form-group col-auto");
+  var OptTDD6 = document.createElement('option');
+  OptTDD6.setAttribute('value',"CodeArticle");
+  if (lang=="FR") {
+    OptTDD6.innerHTML="CodeArticle";}
+  else {
+    OptTDD6.innerHTML="ArticleCode";}
 
-    var Div_Seq = document.createElement('div');
-    Div_Seq.setAttribute('id',"tab"+NumTab+"PasSeqParent"+TabIndex[VarNumTab]);
-    Div_Seq.setAttribute('class',"form-group col-auto");
+  var OptTDD7 = document.createElement('option');
+  OptTDD7.setAttribute('value',"Reference");
+  OptTDD7.innerHTML="Reference";
 
-    var Div_Dico = document.createElement('div');
-    Div_Dico.setAttribute('id',"tab"+NumTab+"DicoParent"+TabIndex[VarNumTab]);
-    Div_Dico.setAttribute('class',"form-group col-auto");
+  var OptTDD8 = document.createElement('option');
+  OptTDD8.setAttribute('value',"Formule");
+  if (lang=="FR") {
+    OptTDD8.innerHTML="Formule"; }
+  else {
+    OptTDD8.innerHTML="Formula"; }
 
-    var Div_Formule = document.createElement('div');
-    Div_Formule.setAttribute('id',"tab"+NumTab+"FormuleParent"+TabIndex[VarNumTab]);
-    Div_Formule.setAttribute('class',"form-group col-auto");
+  var SelectMDG=document.createElement('select');
+  SelectMDG.setAttribute('class',"form-control col-xs-2 col-sn-2 col-md-2 col-lg-2 espacement");
+  SelectMDG.setAttribute('disabled',"disabled");
+  SelectMDG.setAttribute('id',"tab"+NumTab+"ModeDeGeneration"+TabIndex[VarNumTab]);
+  SelectMDG.setAttribute('name',"tab"+NumTab+"ModeDeGeneration"+TabIndex[VarNumTab]);
+  SelectMDG.setAttribute('onchange',"GestionOptionMDG("+NumTab+","+TabIndex[VarNumTab]+");");
 
-    var Div_Codage = document.createElement('div');
-    Div_Codage.setAttribute('id',"tab"+NumTab+"CodageParent"+TabIndex[VarNumTab]);
-    Div_Codage.setAttribute('class',"form-group col-auto");
+  var OptMDG0 = document.createElement('option');
+  OptMDG0.setAttribute('class',"Defaultab");
+  if (lang=="FR") {
+    OptMDG0.innerHTML="Choisissez un mode";}
+  else { 
+    OptMDG0.innerHTML="Select a mode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";}
 
-    var Div_Reference = document.createElement('div');
-    Div_Reference.setAttribute('id',"tab"+NumTab+"ReferenceParent"+TabIndex[VarNumTab]);
-    Div_Reference.setAttribute('class',"form-group col-auto");
+  var OptMDG1 = document.createElement('option');
+  OptMDG1.setAttribute('value',"Aleatoire");
+  if (lang=="FR") {
+    OptMDG1.innerHTML=" Aléatoire";}
+  else { 
+    OptMDG1.innerHTML=" Random";}
 
-    var Div_Prefixe = document.createElement('div');
-    Div_Prefixe.setAttribute('id',"tab"+NumTab+"PrefixeParent"+TabIndex[VarNumTab]);
-    Div_Prefixe.setAttribute('class',"form-group col-auto");
+  var OptMDG2 = document.createElement('option');
+  OptMDG2.setAttribute('value',"LoiNormale");
+  if (lang=="FR") {
+    OptMDG2.innerHTML=" Loi Normale";}
+  else {
+    OptMDG2.innerHTML=" Normal Law";}
 
-    var Div_Suffixe = document.createElement('div');
-    Div_Suffixe.setAttribute('id',"tab"+NumTab+"SuffixeParent"+TabIndex[VarNumTab]);
-    Div_Suffixe.setAttribute('class',"form-group col-auto");
+  var OptMDG3 = document.createElement('option');
+  OptMDG3.setAttribute('value',"Sequentielle");
+  if (lang=="FR") {
+    OptMDG3.innerHTML="Séquentielle";}
+  else {
+    OptMDG3.innerHTML="Sequential";}
 
-    var Div_NbChiffres = document.createElement('div');
-    Div_NbChiffres.setAttribute('id',"tab"+NumTab+"NbChiffresParent"+TabIndex[VarNumTab]);
-    Div_NbChiffres.setAttribute('class',"form-group col-auto");
-
-    var Div_Unite = document.createElement('div');
-    Div_Unite.setAttribute('id',"tab"+NumTab+"UniteParent"+TabIndex[VarNumTab]);
-    Div_Unite.setAttribute('class',"form-group col-auto");
-
-    var Div_HeureMin = document.createElement('div');
-    Div_HeureMin.setAttribute('id',"tab"+NumTab+"DateHeureMinParent"+TabIndex[VarNumTab]);
-    Div_HeureMin.setAttribute('class',"form-group col-auto");
-
-    var Div_HeureMax = document.createElement('div');
-    Div_HeureMax.setAttribute('id',"tab"+NumTab+"DateHeureMaxParent"+TabIndex[VarNumTab]);
-    Div_HeureMax.setAttribute('class',"form-group col-auto");
-
-    var Div_Masque = document.createElement('div');
-    Div_Masque.setAttribute('id',"tab"+NumTab+"MasqueParent"+TabIndex[VarNumTab]);
-    Div_Masque.setAttribute('class',"form-group  col-auto");
-
-    var Div_LesNull = document.createElement('div');
-    Div_LesNull.setAttribute('id',"tab"+NumTab+"LesNullParent"+TabIndex[VarNumTab]);
-    Div_LesNull.setAttribute('class',"form-group col-auto");
+  var OptMDG4 = document.createElement('option');
+  OptMDG4.setAttribute('value',"formule");
+  if (lang=="FR") {
+    OptMDG4.innerHTML="Formule";}
+  else {
+    OptMDG4.innerHTML="Formula";}
     
-    
-    var btn = document.createElement('button');
-    btn.setAttribute('id',"tab"+NumTab+"BoutonSuppression"+TabIndex[VarNumTab]);
-    btn.setAttribute('type',"button");
-    btn.setAttribute('class',"form-group form-control col-auto croix");
-    btn.setAttribute('onclick',"DelRow(" + NumTab + "," + TabIndex[VarNumTab] + ");");
-    
-    var image = document.createElement('img');
-    image.setAttribute('class',"image_croix");
-    image.setAttribute('title',"Supprime la ligne");
-    image.setAttribute('src',"./Style/image/croix.png");
-    
+  var OptMDG5 = document.createElement('option');
+  OptMDG5.setAttribute('value',"Codage");
+  if (lang=="FR") {
+    OptMDG5.innerHTML="Codage";}
+  else {
+    OptMDG5.innerHTML="Coding";}
 
-    row.appendChild(Div_1);
-    Div_1.appendChild(InputNom);
-    Div_1.appendChild(SelectTDD);
-    SelectTDD.appendChild(OptTDD0);
-    SelectTDD.appendChild(OptTDD1);
-    SelectTDD.appendChild(OptTDD2);
-    SelectTDD.appendChild(OptTDD3);
-    SelectTDD.appendChild(OptTDD4);
-    SelectTDD.appendChild(OptTDD5);
-    SelectTDD.appendChild(OptTDD6);
-    SelectTDD.appendChild(OptTDD7);
-    SelectTDD.appendChild(OptTDD8);
-    Div_1.appendChild(SelectMDG);
-    SelectMDG.appendChild(OptMDG0)
-    SelectMDG.appendChild(OptMDG1);
-    SelectMDG.appendChild(OptMDG2);
-    SelectMDG.appendChild(OptMDG3);
-    SelectMDG.appendChild(OptMDG4);
-    Div_1.appendChild(Div_Min);
-    Div_1.appendChild(Div_Max);
-    Div_1.appendChild(Div_Seq);
-    Div_1.appendChild(Div_Dico);
-    Div_1.appendChild(Div_Formule);
-    Div_1.appendChild(Div_Codage);
-    Div_1.appendChild(Div_Reference);
-    Div_1.appendChild(Div_Prefixe);
-    Div_1.appendChild(Div_Suffixe);
-    Div_1.appendChild(Div_NbChiffres);
-    Div_1.appendChild(Div_Unite);
-    Div_1.appendChild(Div_HeureMin);
-    Div_1.appendChild(Div_HeureMax);
-    Div_1.appendChild(Div_Masque);
-    Div_1.appendChild(Div_LesNull);
-    Div_1.appendChild(btn);
-    btn.appendChild(image);
+  var Div_Min = document.createElement('div');
+  Div_Min.setAttribute('id',"tab"+NumTab+"MinParent"+TabIndex[VarNumTab]);
+  Div_Min.setAttribute('class',"form-group col-auto");
+
+  var Div_Max = document.createElement('div');
+  Div_Max.setAttribute('id',"tab"+NumTab+"MaxParent"+TabIndex[VarNumTab]);
+  Div_Max.setAttribute('class',"form-group col-auto");
+
+  var Div_Seq = document.createElement('div');
+  Div_Seq.setAttribute('id',"tab"+NumTab+"PasSeqParent"+TabIndex[VarNumTab]);
+  Div_Seq.setAttribute('class',"form-group col-auto");
+
+  var Div_Dico = document.createElement('div');
+  Div_Dico.setAttribute('id',"tab"+NumTab+"DicoParent"+TabIndex[VarNumTab]);
+  Div_Dico.setAttribute('class',"form-group col-auto");
+
+  var Div_Formule = document.createElement('div');
+  Div_Formule.setAttribute('id',"tab"+NumTab+"FormuleParent"+TabIndex[VarNumTab]);
+  Div_Formule.setAttribute('class',"form-group col-auto");
+
+  var Div_Codage = document.createElement('div');
+  Div_Codage.setAttribute('id',"tab"+NumTab+"CodageParent"+TabIndex[VarNumTab]);
+  Div_Codage.setAttribute('class',"form-group col-auto");
+
+  var Div_Reference = document.createElement('div');
+  Div_Reference.setAttribute('id',"tab"+NumTab+"ReferenceParent"+TabIndex[VarNumTab]);
+  Div_Reference.setAttribute('class',"form-group col-auto");
+
+  var Div_Prefixe = document.createElement('div');
+  Div_Prefixe.setAttribute('id',"tab"+NumTab+"PrefixeParent"+TabIndex[VarNumTab]);
+  Div_Prefixe.setAttribute('class',"form-group col-auto");
+
+  var Div_Suffixe = document.createElement('div');
+  Div_Suffixe.setAttribute('id',"tab"+NumTab+"SuffixeParent"+TabIndex[VarNumTab]);
+  Div_Suffixe.setAttribute('class',"form-group col-auto");
+
+  var Div_NbChiffres = document.createElement('div');
+  Div_NbChiffres.setAttribute('id',"tab"+NumTab+"NbChiffresParent"+TabIndex[VarNumTab]);
+  Div_NbChiffres.setAttribute('class',"form-group col-auto");
+
+  var Div_Unite = document.createElement('div');
+  Div_Unite.setAttribute('id',"tab"+NumTab+"UniteParent"+TabIndex[VarNumTab]);
+  Div_Unite.setAttribute('class',"form-group col-auto");
+
+  var Div_HeureMin = document.createElement('div');
+  Div_HeureMin.setAttribute('id',"tab"+NumTab+"DateHeureMinParent"+TabIndex[VarNumTab]);
+  Div_HeureMin.setAttribute('class',"form-group col-auto");
+
+  var Div_HeureMax = document.createElement('div');
+  Div_HeureMax.setAttribute('id',"tab"+NumTab+"DateHeureMaxParent"+TabIndex[VarNumTab]);
+  Div_HeureMax.setAttribute('class',"form-group col-auto");
+
+  var Div_Masque = document.createElement('div');
+  Div_Masque.setAttribute('id',"tab"+NumTab+"MasqueParent"+TabIndex[VarNumTab]);
+  Div_Masque.setAttribute('class',"form-group  col-auto");
+
+  var Div_LesNull = document.createElement('div');
+  Div_LesNull.setAttribute('id',"tab"+NumTab+"LesNullParent"+TabIndex[VarNumTab]);
+  Div_LesNull.setAttribute('class',"form-group col-auto");
+  
+  
+  var btn = document.createElement('button');
+  btn.setAttribute('id',"tab"+NumTab+"BoutonSuppression"+TabIndex[VarNumTab]);
+  btn.setAttribute('type',"button");
+  btn.setAttribute('class',"form-group form-control col-auto croix");
+  btn.setAttribute('onclick',"DelRow(" + NumTab + "," + TabIndex[VarNumTab] + ");");
+  
+  var image = document.createElement('img');
+  image.setAttribute('class',"image_croix");
+  image.setAttribute('title',"Supprime la ligne");
+  image.setAttribute('src',"./Style/image/croix.png");
+  
+
+  row.appendChild(Div_1);
+  Div_1.appendChild(InputNom);
+  Div_1.appendChild(SelectTDD);
+  SelectTDD.appendChild(OptTDD0);
+  SelectTDD.appendChild(OptTDD1);
+  SelectTDD.appendChild(OptTDD2);
+  SelectTDD.appendChild(OptTDD3);
+  SelectTDD.appendChild(OptTDD4);
+  SelectTDD.appendChild(OptTDD5);
+  SelectTDD.appendChild(OptTDD6);
+  SelectTDD.appendChild(OptTDD7);
+  SelectTDD.appendChild(OptTDD8);
+  Div_1.appendChild(SelectMDG);
+  SelectMDG.appendChild(OptMDG0)
+  SelectMDG.appendChild(OptMDG1);
+  SelectMDG.appendChild(OptMDG2);
+  SelectMDG.appendChild(OptMDG3);
+  SelectMDG.appendChild(OptMDG4);
+  SelectMDG.appendChild(OptMDG5);
+  Div_1.appendChild(Div_Min);
+  Div_1.appendChild(Div_Max);
+  Div_1.appendChild(Div_Seq);
+  Div_1.appendChild(Div_Dico);
+  Div_1.appendChild(Div_Formule);
+  Div_1.appendChild(Div_Codage);
+  Div_1.appendChild(Div_Reference);
+  Div_1.appendChild(Div_Prefixe);
+  Div_1.appendChild(Div_Suffixe);
+  Div_1.appendChild(Div_NbChiffres);
+  Div_1.appendChild(Div_Unite);
+  Div_1.appendChild(Div_HeureMin);
+  Div_1.appendChild(Div_HeureMax);
+  Div_1.appendChild(Div_Masque);
+  Div_1.appendChild(Div_LesNull);
+  Div_1.appendChild(btn);
+  btn.appendChild(image);
 }
 function DelRow(NumTab,NumLigne){ //Supprime une ligne
-    var parentElement = document.getElementById("tab"+NumTab+"Lignes");
-    var Element = document.getElementById("tab"+NumTab+'Ligne'+NumLigne);
-    parentElement.removeChild(Element);
-    TabIndex[VarNumTab]-=1;
-    OrdonnerLesLignes(NumTab);
+  var parentElement = document.getElementById("tab"+NumTab+"Lignes");
+  var Element = document.getElementById("tab"+NumTab+'Ligne'+NumLigne);
+  parentElement.removeChild(Element);
+  TabIndex[VarNumTab]-=1;
+  OrdonnerLesLignes(NumTab);
 }
 
 function MDGSupOptions(NumTab,Numligne){ //supprime tous les modes de génération
@@ -716,7 +857,6 @@ function MDGSupOptions(NumTab,Numligne){ //supprime tous les modes de générati
     parentElement.removeChild(opts[0]);
   }
 }
-
 function GestionOptionMDG(NumTab,Numligne){//gère le formulaire en fonction du mode de génération choisi
   var selectMDGOption = document.getElementById('tab'+NumTab+'ModeDeGeneration'+Numligne);
   var choiceMDG = selectMDGOption.selectedIndex ;
@@ -792,7 +932,7 @@ function AjoutPasSequentielle(NumTab,Numligne){
     div.appendChild(PasS);
   }
 }
-function addTable(){//ajout d'une table
+function addTable(){ //ajout d'une table
     VarNumTab+= 1;
     TabIndex[VarNumTab]=0;
     var tabl= document.getElementById("tables");
@@ -891,8 +1031,8 @@ function addTable(){//ajout d'une table
     InputCSV.setAttribute('name',"CSV"+VarNumTab);
     InputCSV.setAttribute('id',"CSV"+VarNumTab);
     InputCSV.setAttribute('type',"checkbox");
-    InputCSV.setAttribute('class',"pos-checkbox formatSortie"+VarNumTab);
-    InputCSV.setAttribute('class',"formatSortie"+VarNumTab);
+    InputCSV.setAttribute('class',"pos-checkbox input_option formatSortie"+VarNumTab);
+    InputCSV.setAttribute('class',"input_option formatSortie"+VarNumTab);
     InputCSV.setAttribute('onclick',"deRequire('formatSortie"+VarNumTab+"')");
     InputCSV.setAttribute('required','');
     InputCSV.innerHTML = " ";
@@ -1004,7 +1144,8 @@ function addTable(){//ajout d'une table
     if (lang=="FR") {
       OptTDD0.innerHTML="Choisissez un type de données";}
       else {
-      OptTDD0.innerHTML="Select a data type";}
+      OptTDD0.innerHTML="Select a data type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";}
+
     var OptTDD1 = document.createElement('option');
     OptTDD1.setAttribute('value',"id");
     OptTDD1.innerHTML="ID";
@@ -1029,12 +1170,14 @@ function addTable(){//ajout d'une table
     OptTDD5.setAttribute('value',"DateHeure");
     if (lang=="FR") {
       OptTDD5.innerHTML="DateHeure";}
-      else {
+    else {
       OptTDD5.innerHTML="DateHour";}
     var OptTDD6 = document.createElement('option');
     OptTDD6.setAttribute('value',"CodeArticle");
     if (lang=="FR") {
       OptTDD6.innerHTML="CodeArticle";}
+    else {
+      OptTDD6.innerHTML="ArticleCode";}
 
     var OptTDD7 = document.createElement('option');
     OptTDD7.setAttribute('value',"Reference");
@@ -1044,7 +1187,7 @@ function addTable(){//ajout d'une table
     OptTDD8.setAttribute('value',"Formule");
     if (lang=="FR") {
       OptTDD8.innerHTML="Formule"; }
-      else {
+    else {
       OptTDD8.innerHTML="Formula"; }
 
 
@@ -1055,35 +1198,41 @@ function addTable(){//ajout d'une table
     SelectMDG.setAttribute('name',"tab"+VarNumTab+"ModeDeGeneration"+TabIndex[VarNumTab]);
     SelectMDG.setAttribute('onchange',"GestionOptionMDG("+VarNumTab+","+TabIndex[VarNumTab]+");");
     var OptMDG0 = document.createElement('option');
+
     OptMDG0.setAttribute('class',"Defaultab");
     if (lang=="FR") {
       OptMDG0.innerHTML="Choisissez un mode   "; }
     else {
-      OptMDG0.innerHTML="Select a mode    "; }
+      OptMDG0.innerHTML="Select a mode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; }
+
     var OptMDG1 = document.createElement('option');
     OptMDG1.setAttribute('value',"Aleatoire");
     if (lang=="FR") {
       OptMDG1.innerHTML=" Aléatoire";}
       else { 
       OptMDG1.innerHTML=" Random";}
+
     var OptMDG2 = document.createElement('option');
     OptMDG2.setAttribute('value',"LoiNormale");
     if (lang=="FR") {
-      OptMDG2.innerHTML=" Loi normale";}
+      OptMDG2.innerHTML=" Loi Normale";}
     else {
-      OptMDG2.innerHTML=" Norm dist";}    
+      OptMDG2.innerHTML=" Normal Law";}
+
     var OptMDG3 = document.createElement('option');
     OptMDG3.setAttribute('value',"Sequentielle");
     if (lang=="FR") {
       OptMDG3.innerHTML="Séquentielle";}
       else {
       OptMDG3.innerHTML="Sequential";}
+
     var OptMDG4 = document.createElement('option');
     OptMDG4.setAttribute('value',"formule");
     if (lang=="FR") {
-      OptMDG4.innerHTML="formule";}
+      OptMDG4.innerHTML="Formule";}
       else {
-      OptMDG4.innerHTML="formula";}
+      OptMDG4.innerHTML="Formula";}
+
     var OptMDG5 = document.createElement('option');
     OptMDG5.setAttribute('value',"Codage");
     if (lang=="FR") {
@@ -1284,26 +1433,46 @@ function champMultiple(NumTab,Numligne){
             var DependanceLabel = document.createElement('label');
             DependanceLabel.setAttribute('for', "tab" + NumTab + "SelectDependance" + Numligne);
             DependanceLabel.setAttribute('id', "tab" + NumTab + "LabelDependance" + Numligne);
-            DependanceLabel.innerHTML = "&nbsp; Champs multiples ? :";
+            if (lang=="FR") {
+              DependanceLabel.innerHTML = "&nbsp; Champs multiples ? :";}
+            else {
+              DependanceLabel.innerHTML = "&nbsp; Multiples fields ? :";}
 
             var SelectDependance = document.createElement('select');
             SelectDependance.setAttribute('class', "form-control");
             SelectDependance.setAttribute('id', "tab" + NumTab + "SelectDependance" + Numligne);
             SelectDependance.setAttribute('name', "tab" + NumTab + "SelectDependance" + Numligne);
-            SelectDependance.setAttribute('title', "Permet de générer des données supplémentaire déduite\n" +
+            if (lang=="FR") {
+              SelectDependance.setAttribute('title', "Permet de générer des données supplémentaire déduite\n" +
                 "du dictionnaire si celui ci gère cette option \n" +
-                "par exemple pour le dictionnaire des prénoms\n" +
+                "par exemple, pour le dictionnaire des prénoms\n" +
                 "l'on générera une donnée Sexe cohérente\n" +
                 "Dans le cas du dictionnaire Ville l'on\n" +
                 "génere le code postal");
+            } else {
+              SelectDependance.setAttribute('title', "Allow to generate further data from\n" +
+              "the dictionary if it manage this option \n" +
+              "for example, the first name dictionary\n" +
+              "it will generate a data consistent with the gender\n" +
+              "for the town dictionary\n" +
+              "it will generate a proper postal code");
+            }
+            
+            
 
             var OptDep1 = document.createElement('option');
             OptDep1.setAttribute('value', "False");
-            OptDep1.innerHTML = "Non";
+            if (lang=="FR") {
+              OptDep1.innerHTML = "Non";}
+            else {
+              OptDep1.innerHTML = "No";}
 
             var OptDep2 = document.createElement('option');
             OptDep2.setAttribute('value', "True");
-            OptDep2.innerHTML = "Oui";
+            if (lang=="FR") {
+              OptDep2.innerHTML = "Oui";}
+            else {
+              OptDep2.innerHTML = "Yes";}
 
             if(!document.getElementById("tab" +NumTab + "LabelDependance" + Numligne)) {
 
@@ -1337,7 +1506,10 @@ function AjoutChampsReference(NumTab, Numligne){
 
     var TableReferenceLabel = document.createElement('label');
     TableReferenceLabel.setAttribute('id', "tab" + NumTab + "LabelTableReference" + Numligne);
-    TableReferenceLabel.innerHTML = "&nbsp;Table de Reference&nbsp;:&nbsp;";
+    if (lang=="FR") {
+      TableReferenceLabel.innerHTML = "&nbsp;Table de Reference&nbsp;:&nbsp;";}
+    else {
+      TableReferenceLabel.innerHTML = "&nbsp;Reference Table&nbsp;:&nbsp;";}
 
     var InputTableReference = document.createElement('input');
     InputTableReference.setAttribute('class', "form-control");
@@ -1348,7 +1520,10 @@ function AjoutChampsReference(NumTab, Numligne){
 
     var ColonneReferenceLabel = document.createElement('label');
     ColonneReferenceLabel.setAttribute('id', "tab" + NumTab + "LabelColonneReference" + Numligne);
-    ColonneReferenceLabel.innerHTML = "&nbsp;Colonne de Reference&nbsp;:&nbsp;";
+    if (lang=="FR") {
+      ColonneReferenceLabel.innerHTML = "&nbsp;Colonne de Reference&nbsp;:&nbsp;";}
+    else {
+      ColonneReferenceLabel.innerHTML = "&nbsp;Reference Column&nbsp;:&nbsp;";}
 
     var InputColonneReference = document.createElement('input');
     InputColonneReference.setAttribute('class', "form-control");
@@ -1382,7 +1557,10 @@ function AjoutChampsIDS(NumTab,Numligne){ //Ajoute les champs préfixe, suffixe 
     var prefixelabel=document.createElement('label');
     prefixelabel.setAttribute('id',"tab"+NumTab+"LabelPrefixe"+Numligne);
     prefixelabel.setAttribute('for',"tab"+NumTab+"Prefixe"+Numligne);
-    prefixelabel.innerHTML = " Préfixe :";
+    if (lang=="FR") {
+      prefixelabel.innerHTML = " Préfixe :";}
+    else {
+      prefixelabel.innerHTML = " Prefix :";}
 
     var prefixe=document.createElement('input');
     prefixe.setAttribute('type','text');
@@ -1403,7 +1581,10 @@ function AjoutChampsIDS(NumTab,Numligne){ //Ajoute les champs préfixe, suffixe 
     var nbChiffreslabel=document.createElement('label');
     nbChiffreslabel.setAttribute('id',"tab"+NumTab+"LabelNbChiffres"+Numligne);
     nbChiffreslabel.setAttribute('for',"tab"+NumTab+"NbChiffres"+Numligne);
-    nbChiffreslabel.innerHTML = " NbChiff :";
+    if (lang=="FR") {
+      nbChiffreslabel.innerHTML = " NbChiff :";}
+    else {
+      nbChiffreslabel.innerHTML = " FigureNb :";}
 
     var nbChiffres=document.createElement('input');
     nbChiffres.setAttribute('type','text');
@@ -1424,7 +1605,10 @@ function AjoutChampsIDS(NumTab,Numligne){ //Ajoute les champs préfixe, suffixe 
     var  suffixelabel=document.createElement('label');
     suffixelabel.setAttribute('for',"tab"+NumTab+"Suffixe"+Numligne);
     suffixelabel.setAttribute('id',"tab"+NumTab+"LabelSuffixe"+Numligne);
-    suffixelabel.innerHTML = " Suffixe :";
+    if (lang=="FR") {
+      suffixelabel.innerHTML = " Suffixe :";}
+    else {
+      suffixelabel.innerHTML = " Suffix :";}
 
     var  suffixe=document.createElement('input');
     suffixe.setAttribute('type','text');
@@ -1466,21 +1650,33 @@ function champMajuscule(NumTab,Numligne){//Ajout du champ majuscule
     var MajusculeLabel = document.createElement('label');
     MajusculeLabel.setAttribute('for', "tab" + NumTab + "SelectMajuscule" + Numligne);
     MajusculeLabel.setAttribute('id', "tab" + NumTab + "LabelMajuscule" + Numligne);
-    MajusculeLabel.innerHTML = "&nbsp; En majuscules ? :";
+    if (lang=="FR") {
+      MajusculeLabel.innerHTML = "&nbsp; En majuscules ? :";}
+    else {
+      MajusculeLabel.innerHTML = "&nbsp; In capital letters ? :";}
 
     var SelectMajuscule = document.createElement('select');
     SelectMajuscule.setAttribute('class', "form-control");
     SelectMajuscule.setAttribute('id', "tab" + NumTab + "SelectMajuscule" + Numligne);
     SelectMajuscule.setAttribute('name', "tab" + NumTab + "SelectMajuscule" + Numligne);
-    SelectMajuscule.setAttribute('title', "Permet de générer des données entièrement en majuscules");
+    if (lang=="FR") {
+      SelectMajuscule.setAttribute('title', "Permet de générer des données entièrement en majuscules");}
+    else {
+      SelectMajuscule.setAttribute('title', "Allow to generate data in capital letters");}
 
     var OptDep1 = document.createElement('option');
     OptDep1.setAttribute('value', "non");
-    OptDep1.innerHTML = "Non";
+    if (lang=="FR") {
+      OptDep1.innerHTML = "Non";}
+    else {
+      OptDep1.innerHTML = "No";}
 
     var OptDep2 = document.createElement('option');
     OptDep2.setAttribute('value', "oui");
-    OptDep2.innerHTML = "Oui";
+    if (lang=="FR") {
+      OptDep2.innerHTML = "Oui";}
+    else {
+      OptDep2.innerHTML = "Yes";}
 
     if(!document.getElementById("tab" +NumTab + "LabelMajuscule" + Numligne)) {
 
@@ -1509,7 +1705,11 @@ function AjoutChampsDateHeure(NumTab,Numligne){//Ajoute les champs date heure mi
     var dateHeureMinLabel=document.createElement('label');
     dateHeureMinLabel.setAttribute('id',"tab"+NumTab+"LabelDateHeureMin"+Numligne);
     dateHeureMinLabel.setAttribute('for',"tab"+NumTab+"DateHeureMin"+Numligne);
-    dateHeureMinLabel.innerHTML = "Date et Heure minimum :";
+    if (lang=="FR") {
+      dateHeureMinLabel.innerHTML = "Date et Heure minimum :";}
+    else {
+      dateHeureMinLabel.innerHTML = "Minimum Date and Hour :";}
+    
 
     var dateHeureMin=document.createElement('input');
     dateHeureMin.setAttribute('type','text');
@@ -1530,7 +1730,10 @@ function AjoutChampsDateHeure(NumTab,Numligne){//Ajoute les champs date heure mi
     var dateHeureMaxLabel=document.createElement('label');
     dateHeureMaxLabel.setAttribute('id',"tab"+NumTab+"LabelDateHeureMax"+Numligne);
     dateHeureMaxLabel.setAttribute('for',"tab"+NumTab+"DateHeureMax"+Numligne);
-    dateHeureMaxLabel.innerHTML = "Date et Heure maximum :";
+    if (lang=="FR") {
+      dateHeureMaxLabel.innerHTML = "Date et Heure maximum :";}
+    else {
+      dateHeureMaxLabel.innerHTML = "Maximum Date and Hour  :";}
 
     var dateHeureMax=document.createElement('input');
     dateHeureMax.setAttribute('type','text');
@@ -1567,7 +1770,10 @@ function AjoutChampsCodeArticle(NumTab,Numligne){//Ajoute le champ masque des do
     var masqueLabel=document.createElement('label');
     masqueLabel.setAttribute('id',"tab"+NumTab+"LabelMasque"+Numligne);
     masqueLabel.setAttribute('for',"tab"+NumTab+"Masque"+Numligne);
-    masqueLabel.innerHTML = "Masque de l'identifiant :";
+    if (lang=="FR") {
+      masqueLabel.innerHTML = "Masque de l'identifiant :";}
+    else {
+      masqueLabel.innerHTML = "Identifier mask :";}
 
     var masque=document.createElement('input');
     masque.setAttribute('type','text');

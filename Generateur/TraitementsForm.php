@@ -198,6 +198,8 @@ if ($dbg==0) {
     echo "\n";
     echo "</pre>";
 
+    /* NON FONCTIONNEL (uniquement avant le 3.)
+
     // Enable user error handling
     libxml_use_internal_errors(true);
 
@@ -218,6 +220,8 @@ if ($dbg==0) {
         print '<b>DOMDocument::schemaValidate() Generated Errors!</b>';
         libxml_display_errors();
     }
+
+    */
 
     echo "</body></html>\n" ;
 
