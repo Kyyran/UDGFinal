@@ -416,7 +416,7 @@ function MDGDictionnaire (NumTab,Numligne) {//ajoute la génération par diction
           OptDico0.innerHTML="Choose a Dictionary";}
         
         var OptDico1 = document.createElement('option');
-        OptDico1.setAttribute('value',"Prenoms");
+        OptDico1.setAttribute('value',"prenoms");
         if (lang == "FR") {
           OptDico1.innerHTML=" Prénoms";}
         else {
@@ -437,7 +437,7 @@ function MDGDictionnaire (NumTab,Numligne) {//ajoute la génération par diction
           OptDico3.innerHTML="Towns";}
 
         var OptDico4 = document.createElement('option');
-        OptDico4.setAttribute('value',"titre_film");
+        OptDico4.setAttribute('value',"titres_films");
         if (lang == "FR") {
           OptDico4.innerHTML="Titres de film";}
         else {
@@ -451,21 +451,21 @@ function MDGDictionnaire (NumTab,Numligne) {//ajoute la génération par diction
           OptDico5.innerHTML="Actors";}
 
         var OptDico6 = document.createElement('option');
-        OptDico6.setAttribute('value',"langage_informatique");
+        OptDico6.setAttribute('value',"langages_informatiques");
         if (lang == "FR") {
           OptDico6.innerHTML="Langages Informatique";}
         else {
           OptDico6.innerHTML="Computer languages";}
 
         var OptDico7 = document.createElement('option');
-        OptDico7.setAttribute('value',"departement");
+        OptDico7.setAttribute('value',"departements");
         if (lang == "FR") {
           OptDico7.innerHTML="Département";}
         else {
           OptDico7.innerHTML="Department";}
 
         var OptDico8 = document.createElement('option');
-        OptDico8.setAttribute('value',"entreprise_pharma");
+        OptDico8.setAttribute('value',"entreprises_pharma");
         if (lang == "FR") {
           OptDico8.innerHTML="Entreprises pharmaceutique";}
         else {
@@ -500,7 +500,7 @@ function MDGDictionnaire (NumTab,Numligne) {//ajoute la génération par diction
           OptDico12.innerHTML="Molecules";}
 
         var OptDico13 = document.createElement('option');
-        OptDico13.setAttribute('value',"nationalite");
+        OptDico13.setAttribute('value',"nationalites");
         if (lang == "FR") {
           OptDico13.innerHTML="Nationalitées";}
         else {
@@ -528,7 +528,7 @@ function MDGDictionnaire (NumTab,Numligne) {//ajoute la génération par diction
           OptDico16.innerHTML="Films Producers";}
 
         var OptDico17 = document.createElement('option');
-        OptDico17.setAttribute('value',"realisateur");
+        OptDico17.setAttribute('value',"realisateurs");
         if (lang == "FR") {
           OptDico17.innerHTML="Realisateur";}
         else {
@@ -2064,6 +2064,7 @@ function Previsualisation(){
     });
   });
   $("#previsualisation").val("0");
+  console.log("TEST : "+$("#previsualisation").val());
 }
 
 function CreationTableauPrevi(nomTableJson, numeroTable, dossier){

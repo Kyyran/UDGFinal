@@ -1,7 +1,7 @@
 <?php
 
 $previsualisation = $_POST[previsualisation]; //Savoir si la prévisualisation est activée
-var_dump($previsualisation);
+var_dump("traitemenForm previ : " + $previsualisation);
 
 ## traitement du formulaire UDG (fichier index.php)
 

@@ -1,0 +1,17 @@
+<Generateur>
+	<Table> <!-- table 6 -->
+        <Champs>
+            <Donnee NomColonne="id"     Type="id"           />
+            <Donnee NomColonne="poids"  Type="Numerique"    Min="40"  Max="120" Unite="kg"  />
+            <Donnee NomColonne="taille" Type="Numerique"    Min="140" Max="210" Unite="cm"  Null="2" />
+            <Donnee NomColonne="imc"    Type="Formule"      Formule="poids/(taille*taille)"   />
+        </Champs>
+
+        <Parametres>
+            <NomTable nom="test_imc"/>
+            <Sortie   XML="oui" CSV="oui" SQL="oui" JSON="oui" />
+            <NbLigne  valeur="6"/>
+            <Graine   valeur="123" />
+        </Parametres>
+    </Table>
+</Generateur>
