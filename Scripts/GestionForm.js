@@ -806,7 +806,10 @@ function addRow(NumTab){//ajoute une ligne
   
   var image = document.createElement('img');
   image.setAttribute('class',"image_croix");
-  image.setAttribute('title',"Supprime la ligne");
+  if (lang=="FR") {
+    image.setAttribute('title',"Supprime la ligne");}
+  else {
+    image.setAttribute('title',"Delete line");}
   image.setAttribute('src',"./Style/image/croix.png");
   
 
