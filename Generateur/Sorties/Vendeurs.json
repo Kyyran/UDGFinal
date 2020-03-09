@@ -1,0 +1,17 @@
+[
+    {
+        "idVendeur": 1,
+        "prenomVendeur": "Isidore",
+        "refVendeur": 4792
+    },
+    {
+        "idVendeur": 2,
+        "prenomVendeur": "Hermine",
+        "refVendeur": 4785
+    },
+    {
+        "idVendeur": 3,
+        "prenomVendeur": "Noella",
+        "refVendeur": 933
+    }
+]

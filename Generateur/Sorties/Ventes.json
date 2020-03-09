@@ -1,0 +1,107 @@
+[
+    {
+        "idVentes": 1,
+        "codeArticle": 1,
+        "codeVendeur": 1,
+        "annee": 2011,
+        "mois": 8
+    },
+    {
+        "idVentes": 2,
+        "codeArticle": 2,
+        "codeVendeur": 2,
+        "annee": 2014,
+        "mois": 10
+    },
+    {
+        "idVentes": 3,
+        "codeArticle": 3,
+        "codeVendeur": 3,
+        "annee": 2018,
+        "mois": 4
+    },
+    {
+        "idVentes": 4,
+        "codeArticle": 4,
+        "codeVendeur": 4,
+        "annee": 2012,
+        "mois": 2
+    },
+    {
+        "idVentes": 5,
+        "codeArticle": 5,
+        "codeVendeur": 5,
+        "annee": 2015,
+        "mois": 11
+    },
+    {
+        "idVentes": 6,
+        "codeArticle": 6,
+        "codeVendeur": 6,
+        "annee": 2018,
+        "mois": 10
+    },
+    {
+        "idVentes": 7,
+        "codeArticle": 7,
+        "codeVendeur": 7,
+        "annee": 2014,
+        "mois": 10
+    },
+    {
+        "idVentes": 8,
+        "codeArticle": 8,
+        "codeVendeur": 8,
+        "annee": 2010,
+        "mois": 6
+    },
+    {
+        "idVentes": 9,
+        "codeArticle": 9,
+        "codeVendeur": 9,
+        "annee": 2013,
+        "mois": 9
+    },
+    {
+        "idVentes": 10,
+        "codeArticle": 10,
+        "codeVendeur": 10,
+        "annee": 2018,
+        "mois": 7
+    },
+    {
+        "idVentes": 11,
+        "codeArticle": 11,
+        "codeVendeur": 11,
+        "annee": 2015,
+        "mois": 7
+    },
+    {
+        "idVentes": 12,
+        "codeArticle": 12,
+        "codeVendeur": 12,
+        "annee": 2012,
+        "mois": 5
+    },
+    {
+        "idVentes": 13,
+        "codeArticle": 13,
+        "codeVendeur": 13,
+        "annee": 2014,
+        "mois": 10
+    },
+    {
+        "idVentes": 14,
+        "codeArticle": 14,
+        "codeVendeur": 14,
+        "annee": 2013,
+        "mois": 12
+    },
+    {
+        "idVentes": 15,
+        "codeArticle": 15,
+        "codeVendeur": 15,
+        "annee": 2018,
+        "mois": 12
+    }
+]
