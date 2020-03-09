@@ -542,14 +542,14 @@ function MDGDictionnaire (NumTab,Numligne) {//ajoute la génération par diction
           OptDico18.innerHTML="Regions";}
 
         var OptDico19 = document.createElement('option');
-        OptDico19.setAttribute('value',"scenariste");
+        OptDico19.setAttribute('value',"scenaristes");
         if (lang == "FR") {
           OptDico19.innerHTML="Scénariste";}
         else {
           OptDico19.innerHTML="Scenarist";}
 
         var OptDico20 = document.createElement('option');
-        OptDico20.setAttribute('value',"societe_production");
+        OptDico20.setAttribute('value',"societes_production");
         if (lang == "FR") {
           OptDico20.innerHTML="Sociétés de production";}
         else {

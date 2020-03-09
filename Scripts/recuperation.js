@@ -97,7 +97,7 @@ function interpreter(xmlDoc){
                             document.getElementById("tab"+i+"Dictionnaire"+j).value = tabDonnees[j].getAttribute("NomDictionnaire");
                             champMultiple(i,j);
                             champMajuscule(i,j);
-                            if(tabDonnees[j].getAttribute("GenererDependance") == "True"){
+                            if(tabDonnees[j].getAttribute("SelectDependance") == "True"){
                                 document.getElementById("tab"+i+"SelectDependance"+j).value = "oui" ;
                             }
 
