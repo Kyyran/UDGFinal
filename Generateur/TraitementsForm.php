@@ -1,5 +1,8 @@
 <?php
 
+$previsualisation = $_POST[previsualisation]; //Savoir si la prévisualisation est activée
+var_dump($previsualisation);
+
 ## traitement du formulaire UDG (fichier index.php)
 
 # 1. on crée un nouveau répertoire temporaire dans /tmp
@@ -14,6 +17,8 @@ $xml = new DOMDocument('1.0', 'utf-8');
 $gen = $xml->createElement("Generateur");
 $data = array(); //Inutile ?
 $sortieCond = '-1';
+
+$nbPassage = 0;
 
 foreach ($_POST as $key => $val) {
     $key = trim($key);
@@ -39,7 +44,7 @@ foreach ($_POST as $key => $val) {
             if (isset($_POST["SQL" . $numeroTab[0]])) {
                 $sortie->setAttribute("SQL", "oui");
             }
-            if (isset($_POST["JSON" . $numeroTab[0]])) {
+            if (isset($_POST["JSON" . $numeroTab[0]]) | ($previsualisation == 1)) {
                 $sortie->setAttribute("JSON", "oui");
             }
         }
@@ -56,6 +61,8 @@ foreach ($_POST as $key => $val) {
             $graine->setAttribute("valeur", $_POST["GRAINE" . $numeroTab[0]]);
         } # fin si
 
+        array_push($nomTablePrevi, array($nbPassage+1 => $val));
+
         $tableNom->setAttribute("nom", $val);
         $parametre->appendChild($tableNom);
         $parametre->appendChild($sortie);
@@ -65,6 +72,8 @@ foreach ($_POST as $key => $val) {
         $table->appendChild($parametre);
         $gen->appendChild($table);
         $xml->appendChild($gen);
+
+        $nbPassage++;
     }
 
     if (strstr($key, "Label")) {
@@ -155,109 +164,114 @@ $generation = "php generer.php $fichierXML $cheminProjet # ; ls -a $cheminProjet
 system($generation);
 #echo "GENERATION OK*" ;
 
-# 4. on crée un répertoire projet et l'archive zip avec les fichiers générés dont le rapport
+if ($previsualisation == 0){
 
-$deplacement = "mv $fichierXML $cheminProjet # ; cat $cheminProjet/$fichierXML " ;
-system($deplacement) ;
-#echo "DEPLACEMENT OK*" ;
+    # 4. on crée un répertoire projet et l'archive zip avec les fichiers générés dont le rapport
 
-$zipFile = $cheminProjet."/".$projet.'.zip' ;
-$zipCmd  = "cd $cheminProjet ; zip $projet * > /dev/null " ;
+    $deplacement = "mv $fichierXML $cheminProjet # ; cat $cheminProjet/$fichierXML " ;
+    system($deplacement) ;
+    #echo "DEPLACEMENT OK*" ;
 
-try{
-    system($zipCmd);
-    #echo "ZIP OK*" ;
-} catch (Exception $e){
-    echo 'Exception reçue : ',  $e->getMessage(), "\n";
-}
+    $zipFile = $cheminProjet."/".$projet.'.zip' ;
+    $zipCmd  = "cd $cheminProjet ; zip $projet * > /dev/null " ;
 
-# 5. on "envoie" le zip via header()
+    try{
+        system($zipCmd);
+        #echo "ZIP OK*" ;
+    } catch (Exception $e){
+        echo 'Exception reçue : ',  $e->getMessage(), "\n";
+    }
 
-$dbg = 0  ; # 0 en normal, 1 pour debug
+    # 5. on "envoie" le zip via header()
 
-if ($dbg==0) {
+    $dbg = 0  ; # 0 en normal, 1 pour debug
 
-  $h1 = header('Content-Type: application/zip');
-  $h2 = header('Content-Disposition: attachment; filename='.$projet.'.zip');
-  header("Content-Transfer-Encoding: Binary");
-  #ob_end_flush() ;
-  header("Content-Length: ".filesize($zipFile));
-   while (ob_get_level()) { ob_end_clean() ; } ;
-  $resRF = @readfile($zipFile);
+    if ($dbg==0) {
 
+    $h1 = header('Content-Type: application/zip');
+    $h2 = header('Content-Disposition: attachment; filename='.$projet.'.zip');
+    header("Content-Transfer-Encoding: Binary");
+    #ob_end_flush() ;
+    header("Content-Length: ".filesize($zipFile));
+    while (ob_get_level()) { ob_end_clean() ; } ;
+    $resRF = @readfile($zipFile);
+
+    } else {
+
+        echo "<html><head><title>udg</title></head><body><pre>UDG\n\n" ;
+        echo " generation  : $generation  \n\n";
+        echo " deplacement : $deplacement \n\n";
+        echo " zip         : $zipCmd      \n\n";
+        echo " archivage   : $zipFile     \n\n";
+        echo " fichierXML   : $fichierXML     \n\n";
+        echo " POST        : \n";
+        print_r($_POST);
+        echo "\n";
+        echo "</pre>";
+
+        /* NON FONCTIONNEL (uniquement avant le 3.)
+
+        // Enable user error handling
+        libxml_use_internal_errors(true);
+
+        $xml = new DOMDocument();
+        $xml->load("$fichierXML");
+
+        ####AFFICHAGE####
+
+        echo "Récupération de tout le document :\n";
+        // get completed xml document
+        $xml->preserveWhiteSpace = false;
+        $xml->formatOutput = true;
+        echo $xml->saveXML() . "\n";
+
+        ####AFFICHAGE####
+
+        if (!$xml->schemaValidate('udg.xsd')) {
+            print '<b>DOMDocument::schemaValidate() Generated Errors!</b>';
+            libxml_display_errors();
+        }
+
+        */
+
+        echo "</body></html>\n" ;
+
+
+    } # fin si
+
+    //TEST ET AFFICHAGE DES ERREURS XML XSD
+    function libxml_display_error($error)
+    {
+        $return = "<br/>\n";
+        switch ($error->level) {
+            case LIBXML_ERR_WARNING:
+                $return .= "<b>Warning $error->code</b>: ";
+                break;
+            case LIBXML_ERR_ERROR:
+                $return .= "<b>Error $error->code</b>: ";
+                break;
+            case LIBXML_ERR_FATAL:
+                $return .= "<b>Fatal Error $error->code</b>: ";
+                break;
+        }
+        $return .= trim($error->message);
+        if ($error->file) {
+            $return .=    " in <b>$error->file</b>";
+        }
+        $return .= " on line <b>$error->line</b>\n";
+
+        return $return;
+    }
+
+    function libxml_display_errors() {
+        $errors = libxml_get_errors();
+        foreach ($errors as $error) {
+            print libxml_display_error($error);
+        }
+        libxml_clear_errors();
+    }
 } else {
-
-    echo "<html><head><title>udg</title></head><body><pre>UDG\n\n" ;
-    echo " generation  : $generation  \n\n";
-    echo " deplacement : $deplacement \n\n";
-    echo " zip         : $zipCmd      \n\n";
-    echo " archivage   : $zipFile     \n\n";
-    echo " fichierXML   : $fichierXML     \n\n";
-    echo " POST        : \n";
-    print_r($_POST);
-    echo "\n";
-    echo "</pre>";
-
-    /* NON FONCTIONNEL (uniquement avant le 3.)
-
-    // Enable user error handling
-    libxml_use_internal_errors(true);
-
-    $xml = new DOMDocument();
-    $xml->load("$fichierXML");
-
-    ####AFFICHAGE####
-
-    echo "Récupération de tout le document :\n";
-    // get completed xml document
-    $xml->preserveWhiteSpace = false;
-    $xml->formatOutput = true;
-    echo $xml->saveXML() . "\n";
-
-    ####AFFICHAGE####
-
-    if (!$xml->schemaValidate('udg.xsd')) {
-        print '<b>DOMDocument::schemaValidate() Generated Errors!</b>';
-        libxml_display_errors();
-    }
-
-    */
-
-    echo "</body></html>\n" ;
-
-
-} # fin si
-
-//TEST ET AFFICHAGE DES ERREURS XML XSD
-function libxml_display_error($error)
-{
-    $return = "<br/>\n";
-    switch ($error->level) {
-        case LIBXML_ERR_WARNING:
-            $return .= "<b>Warning $error->code</b>: ";
-            break;
-        case LIBXML_ERR_ERROR:
-            $return .= "<b>Error $error->code</b>: ";
-            break;
-        case LIBXML_ERR_FATAL:
-            $return .= "<b>Fatal Error $error->code</b>: ";
-            break;
-    }
-    $return .= trim($error->message);
-    if ($error->file) {
-        $return .=    " in <b>$error->file</b>";
-    }
-    $return .= " on line <b>$error->line</b>\n";
-
-    return $return;
-}
-
-function libxml_display_errors() {
-    $errors = libxml_get_errors();
-    foreach ($errors as $error) {
-        print libxml_display_error($error);
-    }
-    libxml_clear_errors();
+    echo("Chemin du projet : $cheminProjet");
 }
 
 ?>

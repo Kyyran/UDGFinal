@@ -255,3 +255,54 @@ padding-left: 5px;
 #menu li ul {
  position:absolute;
  }
+
+ #Popup{
+  float: left;
+  height: 300px;
+  width: 97%;
+  background-color: lightgrey;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: black;
+  position: absolute;
+  top: -400px;
+  left: auto;
+  visibility: hidden;
+  border:3px solid black;
+  z-index: 10;
+  overflow: scroll;
+}
+
+#TableauPrevisualisation {
+  border:3px solid black;
+  border-collapse:collapse;
+  width:90%;
+  margin:auto;
+  overflow: hidden;
+  top:-302px;
+}
+thead, tfoot {
+  background-color:#D0E3FA;
+  border: thin solid black;
+}
+tbody {
+  background-color:#FFFFFF;
+  border: thin solid black;
+}
+th {
+  font-family:monospace;
+  border: thin solid black;
+  padding:5px;
+  /* background-color:#EFF6FF; */
+  width:25%;
+}
+td {
+  font-family:sans-serif;
+  font-size:80%;
+  border: thin solid black;
+  padding:5px;
+  text-align:left;
+}
+caption {
+  font-family:sans-serif;
+}

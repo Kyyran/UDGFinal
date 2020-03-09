@@ -177,11 +177,25 @@ if ($_GET["lang"]=="FR") {
               <input type="file" id="AcceptInput" accept=".sql,.xml,.txt"/>
               <a href="Fichiers/Parametre.xml" class = "btn btn-lg btn-default white blue" id="btnOpen2"><b><?php echo trad("28",$lang); ?></b></a>
 
-              <button type="submit" id="BoutonPrevi" class="btn btn-lg btn-default white bleu_pastel"><?php echo trad("42",$lang); ?></button>
+              <button type="submit" id="BoutonPrevisualisation" class="btn btn-lg btn-default white bleu_pastel" onclick="Previsualisation()"><?php echo trad("42",$lang); ?></button>
               <button type="submit" id="BoutonEnvois" class="btn btn-lg btn-default white bleu_pastel"><?php echo trad("30",$lang); ?></button>
+            </div>
+            <div id="Popup">
+              <div id="MenuPopup">
+                <button type="button" id="BoutonFermerPopupDebut" class="col-xs-3 col-sn-3 col-md-3 col-lg-3 btn btn-lg btn-success" onclick="FermerPopup()">Fermer</button>
+                <button type="button" id="TableauPrecedent" class="btn btn-default" onclick="PrevisualisationPrecedente()">Pr&eacute;c&eacute;dent</button>
+                <label id="TitreTable"></label>
+                <button type="button" id="TableauSuivant" class="btn btn-default" onclick="PrevisualisationSuivante()">Suivant</button>
+              </div>
+              <div id="CorpsPopup"> 
+                <table id="TableauPrevisualisation">
+                </table>
+                <button type="button" id="BoutonFermerPopupFin" class="col-xs-3 col-sn-3 col-md-3 col-lg-3 btn btn-lg btn-success" onclick="FermerPopup()">Fermer</button>
+              </div>
             </div>
           </div>
         </div>
+        <input id="previsualisation" type="hidden" name="previsualisation" value="0"/>
       </form>
     </div>
 

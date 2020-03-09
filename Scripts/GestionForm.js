@@ -3,6 +3,11 @@ var VarNumTab = 0;//permet de connaitre la table dans laquelle on travail
 //var TabIndex[VarNumTab] = 0;//permet de connaitre la ligne sur laquelle on travaille par table
 TabIndex = [];
 TabIndex[0]=0; //Initialisation de la première ligne à 0
+tableauNomTables = [];            //
+tableauNomTables[0] = 0;          //Valeurs pour la partie prévisualisation
+var nbTables;                     //
+numeroTableActuel = 1;            //
+dossierTmp = '';                  //
 
 function getCookieVal(offset) {
   var endstr=document.cookie.indexOf (";", offset);
@@ -1998,4 +2003,159 @@ function OrdonnerLesLignes(NumTab){ //Fonction permettant de trier les lignes de
       EchangeLigne(NumTabNumLigne[1],NumTabNumLigne[3],NumTab,i); //On echange avec la ligne qu'elle devrait être
     }
   }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////// Partie prévisualisation ///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function Previsualisation(){
+  $("#formulaire").submit(function(e) {
+    $("#BoutonPrevisualisation").attr("disabled", true);
+    $("#previsualisation").val("1");
+    var popup = document.getElementById("Popup");
+    popup.style.visibility = "visible";
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+    var form = $(this);
+    $.ajax({
+      type: "POST",
+      url: 'Generateur/TraitementsForm.php',
+      data: form.serialize(),
+      success: function(data)
+      {
+        console.log(data);
+        comptTable = 1;
+        nomTables = [];
+
+        var regexpChemin = new RegExp('Chemin du projet : ([/.a-zA-Z0-9]*)');
+        dossierTmp = data.match(regexpChemin);
+        dossierTmp = dossierTmp[1]+"/";
+        console.log("dossierTmp = "+dossierTmp);
+        
+        do{
+          var regexpNomTables = new RegExp('table ' + comptTable + ' : ([a-zA-Z0-9]*)');
+          retour = data.match(regexpNomTables);
+          if(retour != null)
+            nomTables[comptTable] = retour[1];
+            console.log("La table numéro "+comptTable+" : "+nomTables[comptTable])
+          comptTable++;
+        }while (retour != null);
+        
+        nomTables.splice(0,1);
+        console.log("nom des tables   =>   "+nomTables[1]);
+        nbTables = nomTables.length; // On récupère le nombre de tables à créer
+        var compt = 1;
+        
+        nomTables.forEach(function(objetNomTable){
+          console.log("Objet : "+objetNomTable);
+          tableauNomTables[compt] = objetNomTable;
+          compt++;
+        })
+        CreationTableauPrevi(tableauNomTables[numeroTableActuel], numeroTableActuel, dossierTmp);
+        BoutonPrecedent();
+        BoutonSuivant();
+        $("#TitreTable").html(tableauNomTables[numeroTableActuel]/*[numeroTableActuel]*/);
+      },
+      error: function() {
+        alert('La prévisualisation a échoué.');
+      }
+    });
+  });
+  $("#previsualisation").val("0");
+}
+
+function CreationTableauPrevi(nomTableJson, numeroTable, dossier){
+  console.log("nomTable : "+nomTableJson);
+  console.log("numero : "+numeroTable);
+  console.log("dossier : "+dossier);
+  console.log(dossier+nomTableJson+".json");
+  //$.get(dossier+nomTableJson+".json", function(tableauJSON){ //Ligne de code avec la bonne méthode, mais qui ne fonctionne pas lors des essais
+  $.get("Generateur/Sorties/"+nomTableJson+".json", function(tableauJSON){ //Valeurs entrées en brut pour l'exemple
+    console.log("PASS");
+    console.log("fichier : "+dossier+nomTableJson+".json")
+    nomsDesValeursJSON = Object.keys(tableauJSON[0]); //récupération des noms JSON des valeurs
+    
+    AjouterEnteteTableauPrevisualisation(nomsDesValeursJSON); //On ajoute les entetes
+
+    taille = nomsDesValeursJSON.length;
+  
+    tableauJSON.forEach(function(objet){
+      AjouterDonneesTableauPrevisualisation(objet);
+    })
+  });
+}
+
+function AjouterEnteteTableauPrevisualisation(nomsDesValeursJSON){
+  elementsEntete = "";
+  nomsDesValeursJSON.forEach(function(nom){
+    elementsEntete = elementsEntete+"<th>"+nom+"</th>";
+  })
+  entete = document.createElement('tr');
+  //console.log(elementsEntete);
+  entete.innerHTML = elementsEntete;
+  document.getElementById('TableauPrevisualisation').appendChild(entete);
+}
+
+function AjouterDonneesTableauPrevisualisation(ligneJSON){
+  elementsLigne = "";
+  for (i=0; i<taille; i++) // Pour chaqueligne, et pour chaque nom on y attribut la valeur correspondante
+  {
+    //console.log(ligneJSON[nomsDesValeursJSON[i]]); // affichage des valeurs une par une
+    elementsLigne = elementsLigne+"<td>"+ligneJSON[nomsDesValeursJSON[i]]+"</td>";
+  }
+  ligne = document.createElement('tr');
+  //console.log(elementsLigne);
+  ligne.innerHTML = elementsLigne;
+  document.getElementById('TableauPrevisualisation').appendChild(ligne);
+}
+
+function PrevisualisationPrecedente(){
+  numeroTableActuel--;  
+  SupprimerTableau();
+  NouvellePrevisu();
+}
+
+function PrevisualisationSuivante(){
+  numeroTableActuel++;
+  NouvellePrevisu();
+}
+
+function BoutonPrecedent(){
+  if(numeroTableActuel == 1)
+    $("#TableauPrecedent").attr("disabled", true);
+  else
+    $("#TableauPrecedent").attr("disabled", false);
+}
+
+function BoutonSuivant(){
+  if(numeroTableActuel == nbTables)
+    $("#TableauSuivant").attr("disabled", true);
+  else
+    $("#TableauSuivant").attr("disabled", false);
+}
+
+function SupprimerTableau(){
+  var tableau = document.getElementById("TableauPrevisualisation");
+  while (tableau.hasChildNodes()) {
+    tableau.removeChild(tableau.lastChild);
+  }
+}
+
+function FermerPopup(){
+  SupprimerTableau();
+  popup = document.getElementById("Popup");
+  popup.style.visibility = "hidden";
+  $("#BoutonPrevisualisation").attr("disabled", false);
+  $("#previsualisation").val("0");
+  console.log("ULTIME DEBUG = " + $("#previsualisation").val());
+}
+
+function NouvellePrevisu(){
+  SupprimerTableau();
+  BoutonPrecedent();
+  BoutonSuivant();
+  $("#TitreTable").html(tableauNomTables[numeroTableActuel]/*[numeroTableActuel]*/);
+  CreationTableauPrevi(tableauNomTables[numeroTableActuel], numeroTableActuel, dossierTmp);
 }
