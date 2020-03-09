@@ -61,7 +61,7 @@
 
     <Table> <!-- table 5 -->
       <Champs>
-         <Donnee NomColonne="NomTrain"       Type="IDS"          NomPerso="referenceTemp" Prefixe="SNCF-" Suffixe="0" NbChiffres="6" />
+         <Donnee NomColonne="NomTrain"       Type="IDS"          Prefixe="SNCF-" Suffixe="0" NbChiffres="6" />
          <Donnee NomColonne="villeDepart"    Type="Dictionnaire" NomDictionnaire="capitales_europeennes" ModeGeneration="uniforme"/>
          <Donnee NomColonne="horaireDepart"  Type="DateHeure"    DateHeureMin="2019-11-06T10:00:00" DateHeureMax="2019-11-06T14:00:00"/>
          <Donnee NomColonne="TypeTrain"      Type="Dictionnaire" NomDictionnaire="types_trains" ModeGeneration="uniforme"/>
@@ -70,10 +70,10 @@
       </Champs>
 
       <Parametres>
-         <NomTable nom="minimal_horairesDepart"/>
-         <Sortie SQL="oui" XML="oui" CSV="oui" JSON="oui"/>
-         <NbLigne  valeur="3"/>
-         <Graine   valeur="666"/>
+         <NomTable  nom="minimal_horairesDepart"/>
+         <Sortie    SQL="oui" XML="oui" CSV="oui" JSON="oui"/>
+         <NbLigne   valeur="3"/>
+         <Graine    valeur="666"/>
       </Parametres>
     </Table>
 
@@ -83,7 +83,7 @@
             <Donnee NomColonne="age"    Type="Numerique" Min="18"   />
             <Donnee NomColonne="poids"  Type="Numerique" Min="40"  Max="120" Unite="kg"  />
             <Donnee NomColonne="taille" Type="Numerique" Min="140" Max="210" Unite="cm"  Null="2" />
-            <Donnee NomColonne="imc"    Type="IMC"   />
+            <Donnee NomColonne="imc"    Type="Formule"      Formule="poids/(taille*taille)"   />
         </Champs>
 
         <Parametres>

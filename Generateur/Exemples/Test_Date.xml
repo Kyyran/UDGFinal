@@ -1,15 +1,15 @@
 <Generateur>
 	<Table>
 		<Champs>
-            <Donnee Type="Numerique" NomColonne="temperature" NomPerso="Celsius" Min="0" Max="100" Null="1" ModeGeneration="uniforme"/>
-			<Donnee Type="DateHeure" NomColonne="Date_et_Heure" DateHeureMin="1998-02-15T03:00:00" DateHeureMax="2019-11-06T10:00:00"/>
+            <Donnee NomColonne="temperatureCelsius" Type="Numerique"  	Min="0" Max="100" Null="1" ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Date_et_Heure"		Type="DateHeure"  		DateHeureMin="1998-02-15T03:00:00" DateHeureMax="2019-11-06T10:00:00"/>
 		</Champs>
 
 		<Parametres>
-			<Sortie SQL="oui" XML="oui" CSV="oui"/>
-			<NbLigne valeur="6"/>
-			<NomTable nom="DateHeure"/>
-			<Graine valeur="66"/>
+			<Sortie 	SQL="oui" XML="oui" CSV="oui"/>
+			<NbLigne 	valeur="6"/>
+			<NomTable 	nom="DateHeure"/>
+			<Graine 	valeur="66"/>
 		</Parametres>
 	</Table>
 </Generateur>

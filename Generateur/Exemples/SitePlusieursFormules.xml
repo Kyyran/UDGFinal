@@ -3,22 +3,22 @@
 <Generateur>
     <Table>
         <Champs>
-            <Donnee NomColonne="longueur" Type="Numerique" ModeGeneration="uniforme" Min="0" Max="100" Unite="m" />
-            <Donnee NomColonne="largeur" Type="Numerique" ModeGeneration="uniforme" Min="0" Max="100" Unite="m" />
-            <Donnee NomColonne="celsius" Type="Numerique" ModeGeneration="uniforme" Min="-20" Max="50" Unite="C"/>
-            <Donnee NomColonne="taille" Type="Numerique" ModeGeneration="uniforme" Min="0.1" Max="2" NbDecimale="2" Unite="m"/>
-            <Donnee NomColonne="poids" Type="Numerique" ModeGeneration="uniforme" Min="1" Max="150" Unite="kg"/>
-            <Donnee NomColonne="valeur" Type="Numerique" ModeGeneration="uniforme" Min="0" Max="10"/>
-            <Donnee NomColonne="Perimetre" Type="Formule" Formule="(longueur+largeur)*2" />
-            <Donnee NomColonne="Fahreneit" Type="Formule" Formule="celsius * 1.8 + 32"/>
-            <Donnee NomColonne="Imc" Type="Formule" Formule="poids / (taille*taille)"/>
-            <Donnee NomColonne="Carre" Type="Formule" Formule="valeur*valeur"/>
+            <Donnee NomColonne="longueur"   Type="Numerique" ModeGeneration="uniforme" Min="0" Max="100" Unite="m" />
+            <Donnee NomColonne="largeur"    Type="Numerique" ModeGeneration="uniforme" Min="0" Max="100" Unite="m" />
+            <Donnee NomColonne="celsius"    Type="Numerique" ModeGeneration="uniforme" Min="-20" Max="50" Unite="C"/>
+            <Donnee NomColonne="taille"     Type="Numerique" ModeGeneration="uniforme" Min="0.1" Max="2" NbDecimale="2" Unite="m"/>
+            <Donnee NomColonne="poids"      Type="Numerique" ModeGeneration="uniforme" Min="1" Max="150" Unite="kg"/>
+            <Donnee NomColonne="valeur"     Type="Numerique" ModeGeneration="uniforme" Min="0" Max="10"/>
+            <Donnee NomColonne="Perimetre"  Type="Formule" Formule="(longueur+largeur)*2" />
+            <Donnee NomColonne="Fahreneit"  Type="Formule" Formule="celsius * 1.8 + 32"/>
+            <Donnee NomColonne="Imc"        Type="Formule" Formule="poids / (taille*taille)"/>
+            <Donnee NomColonne="Carre"      Type="Formule" Formule="valeur*valeur"/>
         </Champs>
         <Parametres>
-            <NomTable nom="SitePlusieursFormules"/>
-            <Sortie CSV="oui"/>
-            <NbLigne valeur="10"/>
-            <Graine valeur="11276666" />
+            <NomTable   nom="SitePlusieursFormules"/>
+            <Sortie     CSV="oui"/>
+            <NbLigne    valeur="10"/>
+            <Graine     valeur="11276666" />
         </Parametres>
     </Table>
 </Generateur>

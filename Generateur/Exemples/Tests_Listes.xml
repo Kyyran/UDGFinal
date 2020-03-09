@@ -1,34 +1,34 @@
 <Generateur>
 	<Table>
 		<Champs>
-			<Donnee Type="Dictionnaire" NomColonne="Nom de la commune" 				NomDictionnaire="villes" 					ModeGeneration="uniforme" 	GenererDependance="True"/>
-			<Donnee Type="Dictionnaire" NomColonne="Type de train" 					NomDictionnaire="types_trains" 				ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Nom" 							NomDictionnaire="noms" 						ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Prénom" 						NomDictionnaire="Prenoms" 					ModeGeneration="uniforme" 	GenererDependance="True"/>
-			<Donnee Type="Dictionnaire" NomColonne="Acteur" 						NomDictionnaire="acteurs" 					ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Producteur" 					NomDictionnaire="producteurs" 				ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Réalisateur" 					NomDictionnaire="realisateurs" 				ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Scénariste" 					NomDictionnaire="scenaristes" 				ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Titre du film" 					NomDictionnaire="titres_films" 				ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Société de production" 			NomDictionnaire="societes_production" 		ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Département" 					NomDictionnaire="departements" 				ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Entreprise Pharmaceutique" 		NomDictionnaire="entreprises_pharma" 		ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Événement historique" 			NomDictionnaire="evenements_historiques" 	ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Langages informatiques" 		NomDictionnaire="langages_informatiques" 	ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Médicament" 					NomDictionnaire="medic" 					ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Métier" 						NomDictionnaire="metiers" 					ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Molécules" 						NomDictionnaire="molecules" 				ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Nationalité" 					NomDictionnaire="nationalites" 				ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Pays" 							NomDictionnaire="pays" 						ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Personnage historique" 			NomDictionnaire="personnages_historiques" 	ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Région" 						NomDictionnaire="regions" 					ModeGeneration="uniforme"/>
-			<Donnee Type="Dictionnaire" NomColonne="Capitales" 						NomDictionnaire="capitales_europeennes" 	ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Nom de la ville" 				Type="Dictionnaire" 	NomDictionnaire="villes" 					ModeGeneration="uniforme" 	GenererDependance="True"/>
+			<Donnee NomColonne="Type de train" 					Type="Dictionnaire" 	NomDictionnaire="types_trains" 				ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Nom" 							Type="Dictionnaire" 	NomDictionnaire="noms" 						ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Prénom" 						Type="Dictionnaire" 	NomDictionnaire="prenoms" 					ModeGeneration="uniforme" 	GenererDependance="True"/>
+			<Donnee NomColonne="Acteur" 						Type="Dictionnaire" 	NomDictionnaire="acteurs" 					ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Producteur" 					Type="Dictionnaire" 	NomDictionnaire="producteurs" 				ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Réalisateur" 					Type="Dictionnaire" 	NomDictionnaire="realisateurs" 				ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Scénariste" 					Type="Dictionnaire" 	NomDictionnaire="scenaristes" 				ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Titre du film" 					Type="Dictionnaire" 	NomDictionnaire="titres_films" 				ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Société de production" 			Type="Dictionnaire" 	NomDictionnaire="societes_production" 		ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Département" 					Type="Dictionnaire" 	NomDictionnaire="departements" 				ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Entreprise Pharmaceutique" 		Type="Dictionnaire" 	NomDictionnaire="entreprises_pharma" 		ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Événement historique" 			Type="Dictionnaire" 	NomDictionnaire="evenements_historiques" 	ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Langages informatiques" 		Type="Dictionnaire" 	NomDictionnaire="langages_informatiques" 	ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Médicament" 					Type="Dictionnaire" 	NomDictionnaire="medic" 					ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Métier" 						Type="Dictionnaire" 	NomDictionnaire="metiers" 					ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Molécules" 						Type="Dictionnaire" 	NomDictionnaire="molecules" 				ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Nationalité" 					Type="Dictionnaire" 	NomDictionnaire="nationalites" 				ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Pays" 							Type="Dictionnaire" 	NomDictionnaire="pays" 						ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Personnage historique" 			Type="Dictionnaire" 	NomDictionnaire="personnages_historiques" 	ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Région" 						Type="Dictionnaire" 	NomDictionnaire="regions" 					ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Capitales" 						Type="Dictionnaire" 	NomDictionnaire="capitales_europeennes" 	ModeGeneration="uniforme"/>
 		</Champs>
 		<Parametres>
-			<Sortie XML="oui" CSV="oui" SQL="oui" JSON="oui"/> 
-			<NbLigne valeur="20"/>
-			<NomTable nom="test"/>
-			<Graine valeur="1234"/>
+			<Sortie 	XML="oui" CSV="oui" SQL="oui" JSON="oui"/> 
+			<NbLigne 	valeur="20"/>
+			<NomTable 	nom="test"/>
+			<Graine 	valeur="1234"/>
 		</Parametres>
 	</Table>
 </Generateur>

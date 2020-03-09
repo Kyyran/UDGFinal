@@ -7,10 +7,10 @@
             <Donnee NomColonne="refArticle" Type="CodeArticle"  Masque="XXXyy-991" />
         </Champs>
         <Parametres>
-            <NomTable nom="articles"/>
-            <Sortie SQL="oui"/>
-            <NbLigne valeur="10"/>
-            <Graine valeur="11276666" />
+            <NomTable   nom="articles"/>
+            <Sortie     SQL="oui"/>
+            <NbLigne    valeur="10"/>
+            <Graine     valeur="11276666" />
         </Parametres>
     </Table>
 
@@ -21,10 +21,10 @@
             <Donnee NomColonne="refVendeur" Type="Numerique"    Null="0" Min="1" Max="10000" ModeGeneration="aleatoire"/>
         </Champs>
         <Parametres>
-            <NomTable nom="vendeurs"/>
-            <Sortie SQL="oui"/>
-            <NbLigne valeur="3"/>
-            <Graine valeur="10276663" />
+            <NomTable   nom="vendeurs"/>
+            <Sortie     SQL="oui"/>
+            <NbLigne    valeur="3"/>
+            <Graine     valeur="10276663" />
         </Parametres>
     </Table>
 
@@ -37,10 +37,10 @@
             <Donnee NomColonne="refVendeur"  Type="Reference"  TableReference="vendeurs" ColonneReference="refVendeur" />
         </Champs>
         <Parametres>
-            <NomTable nom="ventes"/>
-            <Sortie SQL="oui"/>
-            <NbLigne valeur="15"/>
-            <Graine valeur="102766666" />
+            <NomTable   nom="ventes"/>
+            <Sortie     SQL="oui"/>
+            <NbLigne    valeur="15"/>
+            <Graine     valeur="102766666" />
         </Parametres>
     </Table>
 </Generateur>

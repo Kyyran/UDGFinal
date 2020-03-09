@@ -1,0 +1,16 @@
+<Generateur>
+	<Table>
+		<Champs>
+			<Donnee NomColonne="Prénom" 		Type="Dictionnaire"  	NomDictionnaire="prenoms" 			ModeGeneration="uniforme" 		GenererDependance="True"/>
+            <Donnee NomColonne="Nom" 			Type="Dictionnaire"  	NomDictionnaire="noms" 				ModeGeneration="uniforme"/>
+			<Donnee NomColonne="Date_et_Heure" 	Type="DateHeure" 	 	DateHeureMin="1970-01-01T00:00:00" 	DateHeureMax="2019-01-01T23:59:59"/>
+            <Donnee NomColonne="Ville_origine" 	Type="Dictionnaire"  	NomDictionnaire="villes" 			ModeGeneration="uniforme"/>
+		</Champs>
+		<Parametres>
+			<Sortie 	SQL="oui" XML="oui" CSV="oui" JSON="oui"/>
+			<NbLigne 	valeur="15"/>
+			<NomTable 	nom="Table_Test_Ultime"/>
+			<Graine 	valeur="12"/>
+		</Parametres>
+	</Table>
+</Generateur>
