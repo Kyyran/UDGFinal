@@ -75,6 +75,7 @@
        <xsd:enumeration value="CodeArticle"   />
        <xsd:enumeration value="Reference"     />
        <xsd:enumeration value="Formule"       />
+       <xsd:enumeration value="Identifiant"   />
     </xsd:restriction>
   </xsd:simpleType>
 
@@ -103,6 +104,8 @@
       <xsd:attribute name="EnMajuscules"/>
       <xsd:attribute name="NbChiffres" type="xsd:integer"/>
       <xsd:attribute name="Masque" type="xsd:string"/>
+      <xsd:attribute name="Concatenation" type="xsd:string"/>
+      <xsd:attribute name="NomColonneConcatene" type="xsd:string"/>
     </xsd:complexType>
   </xsd:element>
 
