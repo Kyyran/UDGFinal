@@ -1435,7 +1435,7 @@ function champMultiple(NumTab,Numligne){
     if(document.getElementById('tab'+NumTab+'Dictionnaire'+Numligne)){
         var sel=document.getElementById('tab'+NumTab+'Dictionnaire'+Numligne);
 
-        if(sel.value == "villes" || sel.value == "Prenoms") {
+        if(sel.value == "villes" || sel.value == "prenoms") {
             var div = document.getElementById("tab" + NumTab + "DicoParent" + Numligne);
 
             var DependanceLabel = document.createElement('label');

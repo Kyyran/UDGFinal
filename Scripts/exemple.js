@@ -36,7 +36,7 @@ function ChampSimple(){ //EXEMPLE D'UNE TABLE SIMPLE
     document.getElementById("tab"+table+"Label"+ligne).value ="Prenom";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
-    document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "Prenoms";
+    document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "prenoms";
     champMajuscule(table,ligne);
     document.getElementById("tab"+table+"SelectMajuscule"+ligne).value = "non";
 
@@ -123,7 +123,7 @@ function ChampMultiTables(){ //EXEMPLE DE MULTIPLES TABLES
     document.getElementById("tab"+table+"Label"+ligne).value ="prenomVendeur";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
-    document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "Prenoms";
+    document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "prenoms";
     champMajuscule(table,ligne);
     document.getElementById("tab"+table+"SelectMajuscule"+ligne).value = "non";
 
@@ -261,7 +261,7 @@ function Codage() { //EXEMPLE DE CODAGE
     document.getElementById("tab"+table+"Label"+ligne).value ="Prenom";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
-    document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "Prenoms";
+    document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "prenoms";
     champMajuscule(table,ligne);
     document.getElementById("tab"+table+"SelectMajuscule"+ligne).value = "non";
 
@@ -311,7 +311,7 @@ function DonneeCoherente() { //EXEMPLE DE DONNEE COHERENTE
     document.getElementById("tab"+table+"Label"+ligne).value ="Prenom";
     document.getElementById("tab"+table+"TypeDeDonnees"+ligne).value = "Dictionnaire";
     GestionOptionTDD(table,ligne);
-    document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "Prenoms";
+    document.getElementById("tab"+table+"Dictionnaire"+ligne).value = "prenoms";
     champMultiple(table,ligne);
     document.getElementById("tab"+table+"SelectDependance"+ligne).value = "True";
     champMajuscule(table,ligne);
